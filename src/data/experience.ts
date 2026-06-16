@@ -11,6 +11,20 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    role: "Front Service Team Member",
+    organization: "McDonald's",
+    location: "Victoria",
+    startDate: "September 2025",
+    endDate: null,
+    description: "Working front service area including drive thru, order taking, and order packing.",
+    highlights: [
+      "Take orders and pack orders at drive thru and front counter",
+      "Provide fast, friendly customer service during peak hours",
+      "Collaborate with team to maintain smooth service flow",
+    ],
+    type: "work",
+  },
+  {
     role: "Soccer Referee",
     organization: "Berwick Churches Soccer Club",
     location: "Berwick, Victoria",
