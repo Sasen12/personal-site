@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getAllPosts } from "@/lib/posts"
+import { getAllPosts, getPostBySlug } from "@/lib/posts"
 import { getAdminPost } from "@/lib/admin-storage"
 import AnimatedSection from "@/components/AnimatedSection"
 
@@ -15,8 +15,7 @@ export default async function BlogPost({
 }) {
   const { slug } = await params
 
-  const markdownPosts = getAllPosts()
-  let post = markdownPosts.find((p) => p.slug === slug)
+  let post = await getPostBySlug(slug)
 
   if (!post) {
     const adminPost = await getAdminPost(slug)
