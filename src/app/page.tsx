@@ -61,6 +61,31 @@ export default function Home() {
         </div>
       </ParallaxHero>
 
+      <section className="border-y border-gray-200 bg-gray-50/50 dark:border-slate-800 dark:bg-slate-800/30">
+        <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            {[
+              { label: "Projects", value: projects.length },
+              { label: "Blog Posts", value: getAllPosts().length + 4 },
+              { label: "Tech Stack", value: [...new Set(projects.flatMap((p) => p.tech))].length },
+              { label: "Years Building", value: 3 },
+            ].map((stat, i) => (
+              <AnimatedSection key={stat.label} delay={i * 0.1}>
+                <div className="text-center">
+                  <span className="block text-4xl font-bold tracking-tight text-indigo-600 sm:text-5xl dark:text-indigo-400">
+                    {stat.value}
+                    {stat.label === "Years Building" && <span className="text-2xl sm:text-3xl">+</span>}
+                  </span>
+                  <span className="mt-1 block text-sm text-gray-600 dark:text-slate-400">
+                    {stat.label}
+                  </span>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <div className="mx-auto max-w-5xl space-y-32 px-6 py-28">
         <AnimatedSection>
           <section>
