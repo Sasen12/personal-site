@@ -17,13 +17,9 @@ body {
   background-image: none;
 }
 
-:root.dark body {
+.dark body {
   background-image: radial-gradient(ellipse at top right, rgba(99, 102, 241, 0.04), transparent 60%),
                     radial-gradient(ellipse at bottom left, rgba(99, 102, 241, 0.03), transparent 60%);
-}
-
-.hero-gradient {
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
 }
 
 .glow {
@@ -32,65 +28,6 @@ body {
 
 .glow-text {
   text-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
-}
-
-@media (prefers-color-scheme: dark) {
-  article h2 {
-    @apply mb-4 mt-10 text-xl font-semibold;
-  }
-
-  article h3 {
-    @apply mb-3 mt-6 text-lg font-semibold;
-  }
-
-  article p {
-    @apply mb-4 leading-relaxed;
-  }
-
-  article ul,
-  article ol {
-    @apply mb-4 pl-6;
-  }
-
-  article ul {
-    @apply list-disc;
-  }
-
-  article ol {
-    @apply list-decimal;
-  }
-
-  article li {
-    @apply mb-1;
-  }
-
-  article code {
-    @apply rounded bg-slate-800 px-1.5 py-0.5 text-sm font-mono;
-  }
-
-  article pre {
-    @apply mb-4 overflow-x-auto rounded-lg bg-slate-950 p-4 text-sm text-slate-100;
-  }
-
-  article pre code {
-    @apply bg-transparent p-0;
-  }
-
-  article a {
-    @apply text-indigo-400 underline hover:text-indigo-300;
-  }
-
-  article blockquote {
-    @apply mb-4 border-l-4 border-indigo-700 pl-4 italic text-slate-400;
-  }
-
-  article hr {
-    @apply my-8 border-slate-700;
-  }
-
-  article img {
-    @apply rounded-lg;
-  }
 }
 
 article h2 {

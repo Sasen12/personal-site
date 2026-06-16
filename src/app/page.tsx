@@ -17,16 +17,16 @@ export default function Home() {
         <div className="relative px-6 pt-28 pb-32 sm:pt-36 sm:pb-44">
           <div className="mx-auto max-w-5xl">
             <AnimatedSection delay={0}>
-              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-300 backdrop-blur-sm">
-                <span className="inline-flex h-2 w-2 rounded-full bg-indigo-400" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-700 backdrop-blur-sm dark:text-indigo-300">
+                <span className="inline-flex h-2 w-2 rounded-full bg-indigo-500 dark:bg-indigo-400" />
                 Building things for the web
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={0.15}>
-              <h1 className="mt-6 mb-4 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              <h1 className="mt-6 mb-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
                 Hi, I&apos;m{" "}
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">
                   Sasen
                 </span>
                 .
@@ -34,7 +34,7 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <p className="max-w-2xl text-lg leading-relaxed text-gray-300">
+              <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                 Full-stack developer, Unity tinkerer, and video editor. I build web apps,
                 mobile apps, games, tools, and occasionally make music.
               </p>
@@ -44,14 +44,14 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-gray-900 transition-all hover:bg-indigo-50 hover:shadow-lg"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-indigo-700 hover:shadow-lg dark:bg-white dark:text-gray-900 dark:hover:bg-indigo-50"
                 >
                   View Projects
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-xl border border-gray-600 px-6 py-3 text-sm font-medium text-gray-300 transition-all hover:border-gray-500 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-xl border border-gray-400 px-6 py-3 text-sm font-medium text-gray-700 transition-all hover:border-gray-900 hover:text-gray-900 dark:border-gray-600 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:text-white"
                 >
                   Get in Touch
                 </Link>
