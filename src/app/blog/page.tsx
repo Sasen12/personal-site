@@ -1,4 +1,6 @@
 import BlogCard from "@/components/BlogCard"
+import AnimatedSection from "@/components/AnimatedSection"
+import AnimatedCard from "@/components/AnimatedCard"
 import { getAllPosts } from "@/lib/posts"
 
 export default function Blog() {
@@ -6,14 +8,18 @@ export default function Blog() {
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
-      <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Blog</h1>
-      <p className="mb-10 text-gray-600 dark:text-gray-400">
-        Thoughts, tutorials, and things I&apos;ve learned.
-      </p>
+      <AnimatedSection>
+        <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Blog</h1>
+        <p className="mb-10 text-gray-600 dark:text-gray-400">
+          Thoughts, tutorials, and things I&apos;ve learned.
+        </p>
+      </AnimatedSection>
       {posts.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2">
-          {posts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+          {posts.map((post, i) => (
+            <AnimatedCard key={post.slug} index={i}>
+              <BlogCard post={post} />
+            </AnimatedCard>
           ))}
         </div>
       ) : (
