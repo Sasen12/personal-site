@@ -8,14 +8,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "VCE Forge",
+    description: "Full-stack study platform for Australian Year 12 students with JWT auth, SAC/exam tracking, AI-generated practice questions (OpenAI), study timers, adaptive study plans, textbook/Obsidian upload, goals, XP, streaks, badges, and a chess break mode.",
+    tech: ["Expo", "React Native", "Node.js", "Express", "PostgreSQL", "Prisma", "OpenAI", "Zustand"],
+    link: "https://vceforge.space",
+  },
+  {
     title: "Fret Flow",
     description: "Guitar practice web app with camera coach (MediaPipe), chord trainer, ear training, metronome, tuner, practice timer, journal, progress tracking, and song library.",
     tech: ["React", "Vite", "Radix UI", "Supabase", "TanStack Query", "Tailwind CSS", "MediaPipe"],
-  },
-  {
-    title: "VCE Study Tracker",
-    description: "Full-stack study app for Year 12 students with dark mode, JWT auth, study timers, SAC/exam tracking, AI practice questions (OpenAI), XP/streaks/badges, and chess break mode.",
-    tech: ["Expo", "React Native", "Node.js", "Express", "PostgreSQL", "Prisma", "OpenAI", "Zustand"],
   },
   {
     title: "FRIDAY — AI Assistant",
