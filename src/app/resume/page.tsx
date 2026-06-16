@@ -71,6 +71,36 @@ export default function Resume() {
         </div>
       </AnimatedSection>
 
+      <AnimatedSection delay={0.35}>
+        <h2 className="mb-6 mt-14 text-xl font-bold">Achievements</h2>
+        <div className="space-y-4">
+          <AnimatedCard index={0}>
+            <div className="rounded-xl border border-gray-200 p-5 dark:border-slate-700">
+              <h3 className="font-semibold">Smart City Pitch Fest - City of Casey</h3>
+              <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
+                Pitched an innovative idea on managing City of Casey parking spaces using AI.
+              </p>
+            </div>
+          </AnimatedCard>
+          <AnimatedCard index={1}>
+            <div className="rounded-xl border border-gray-200 p-5 dark:border-slate-700">
+              <h3 className="font-semibold">VEX Robotics</h3>
+              <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
+                2023-2024 Season: 4-time finalist &middot; 2024-2025 Season: Tournament Champion
+              </p>
+            </div>
+          </AnimatedCard>
+          <AnimatedCard index={2}>
+            <div className="rounded-xl border border-gray-200 p-5 dark:border-slate-700">
+              <h3 className="font-semibold">Cricket</h3>
+              <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
+                SEISA cricket finalist (2021) &middot; DDCA cricket finalist (2022-2023)
+              </p>
+            </div>
+          </AnimatedCard>
+        </div>
+      </AnimatedSection>
+
       <AnimatedSection delay={0.4}>
         <div className="mt-12">
           <Link
