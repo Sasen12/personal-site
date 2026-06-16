@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getAllPosts } from "@/lib/posts"
+import { getAdminPost } from "@/lib/admin-storage"
 import AnimatedSection from "@/components/AnimatedSection"
 
 export function generateStaticParams() {
@@ -13,8 +14,23 @@ export default async function BlogPost({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const posts = getAllPosts()
-  const post = posts.find((p) => p.slug === slug)
+
+  const markdownPosts = getAllPosts()
+  let post = markdownPosts.find((p) => p.slug === slug)
+
+  if (!post) {
+    const adminPost = await getAdminPost(slug)
+    if (adminPost) {
+      post = {
+        slug: adminPost.slug,
+        title: adminPost.title,
+        date: adminPost.date,
+        excerpt: adminPost.excerpt,
+        content: adminPost.contentHtml || adminPost.content,
+        tags: adminPost.tags,
+      }
+    }
+  }
 
   if (!post) notFound()
 

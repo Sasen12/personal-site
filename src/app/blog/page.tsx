@@ -2,9 +2,32 @@ import BlogCard from "@/components/BlogCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import AnimatedCard from "@/components/AnimatedCard"
 import { getAllPosts } from "@/lib/posts"
+import { getAdminPosts } from "@/lib/admin-storage"
 
-export default function Blog() {
-  const posts = getAllPosts()
+export default async function Blog() {
+  const markdownPosts = getAllPosts()
+  const adminPosts = await getAdminPosts()
+
+  const allPosts = [
+    ...markdownPosts.map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      date: p.date,
+      excerpt: p.excerpt,
+      tags: p.tags,
+      content: "",
+    })),
+    ...adminPosts.map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      date: p.date,
+      excerpt: p.excerpt,
+      tags: p.tags,
+      content: "",
+    })),
+  ]
+
+  allPosts.sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
@@ -14,9 +37,9 @@ export default function Blog() {
           Thoughts, tutorials, and things I&apos;ve learned.
         </p>
       </AnimatedSection>
-      {posts.length > 0 ? (
+      {allPosts.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2">
-          {posts.map((post, i) => (
+          {allPosts.map((post, i) => (
             <AnimatedCard key={post.slug} index={i}>
               <BlogCard post={post} />
             </AnimatedCard>
