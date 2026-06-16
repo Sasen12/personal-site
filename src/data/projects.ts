@@ -3,6 +3,7 @@ export interface Project {
   title: string
   description: string
   tech: string[]
+  category: string
   link?: string
   github?: string
   features?: string[]
@@ -15,6 +16,7 @@ export const projects: Project[] = [
     title: "VCE Forge",
     description: "Full-stack study platform for Australian Year 12 students with JWT auth, SAC/exam tracking, AI-generated practice questions (OpenAI), study timers, adaptive study plans, textbook/Obsidian upload, goals, XP, streaks, badges, and a chess break mode.",
     tech: ["Expo", "React Native", "Node.js", "Express", "PostgreSQL", "Prisma", "OpenAI", "Zustand"],
+    category: "Web & Mobile",
     link: "https://vceforge.space",
     github: "https://github.com/Sasen12/vce-study-tracker",
     features: [
@@ -34,6 +36,7 @@ export const projects: Project[] = [
     title: "Fret Flow",
     description: "Guitar practice web app with camera coach (MediaPipe), chord trainer, ear training, metronome, tuner, practice timer, journal, progress tracking, and song library.",
     tech: ["React", "Vite", "Radix UI", "Supabase", "TanStack Query", "Tailwind CSS", "MediaPipe"],
+    category: "Web",
     github: "https://github.com/Sasen12/Fret-flow",
     features: [
       "Real-time hand tracking via MediaPipe to detect finger positions",
@@ -50,6 +53,7 @@ export const projects: Project[] = [
     title: "VCE Website",
     description: "A Next.js website for VCE students with resources, study guides, and exam prep materials.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    category: "Web",
     github: "https://github.com/Sasen12/VCE-WEBSITE",
     features: [
       "Study guides and resources organized by subject",
@@ -63,6 +67,7 @@ export const projects: Project[] = [
     title: "FRIDAY — AI Assistant",
     description: "Tony Stark-inspired AI assistant with MCP server exposing tools (news, web search, system info) plus LiveKit voice agent with wake-word activation and speech output.",
     tech: ["Python", "FastMCP", "LiveKit Agents", "OpenAI", "macOS"],
+    category: "AI",
     github: "https://github.com/SAGAR-TAMANG/friday-tony-stark-demo",
     features: [
       "LiveKit voice agent with real-time speech input/output",
@@ -77,6 +82,7 @@ export const projects: Project[] = [
     title: "OneBridge",
     description: "Next-gen encrypted local network bridge between Android and macOS with QR pairing, clipboard sync, file transfer, notification mirroring, remote trackpad, and audio control.",
     tech: ["Kotlin", "Jetpack Compose", "SwiftUI", "ECDH", "AES-256-GCM"],
+    category: "Mobile & Desktop",
     features: [
       "QR code pairing — scan to connect, no IP typing",
       "P-256 ECDH key exchange for secure channel establishment",
@@ -93,6 +99,7 @@ export const projects: Project[] = [
     title: "Hanging By A Thread",
     description: "Unity multiplayer game using the Blocks framework with platformer and shooter gameplay modes. Custom scripts, animations, and network sync.",
     tech: ["Unity", "C#", "Blocks Framework"],
+    category: "Games",
     github: "https://github.com/Sasen12/Hanging-By-A-Thread",
     features: [
       "Multiplayer gameplay with real-time network synchronization",
@@ -106,6 +113,7 @@ export const projects: Project[] = [
     title: "Echoes in the Static",
     description: "Unity 3D game with custom assets, scripts, scenes, shaders, and audio — built from the ground up as a creative exploration game.",
     tech: ["Unity", "C#", "ShaderLab", "Blender"],
+    category: "Games",
     features: [
       "Custom 3D environments built in Unity",
       "Original audio design and shader effects",
@@ -118,12 +126,14 @@ export const projects: Project[] = [
     title: "The Million Dollar Dream",
     description: "Production landing page with live AI demo form wired to n8n webhooks for automated processing.",
     tech: ["Next.js", "React 19", "Tailwind CSS", "n8n"],
+    category: "Web",
   },
   {
     slug: "roam",
     title: "Roam",
     description: "Night-out planner iOS app that turns a few preferences into a personalised adventure plan with real venues, route maps, and live availability — powered by OpenStreetMap.",
     tech: ["Flutter", "Dart", "Provider", "OpenStreetMap"],
+    category: "Mobile",
     features: [
       "Preference-based itinerary generation (group size, budget, vibe, transport)",
       "Real venue data via OpenStreetMap Nominatim + Overpass APIs",
@@ -143,6 +153,7 @@ export const projects: Project[] = [
     title: "TaxCopilot",
     description: "Internal AI-assisted workflow tool for Australian tax agents with client management, document extraction, deduction suggestions, mortgage broking workspace, and audit logging.",
     tech: ["Python", "FastAPI", "Next.js", "OpenAI", "SQLite"],
+    category: "Web & AI",
     features: [
       "Client management with document upload and extraction",
       "AI-powered deduction suggestions based on client data",

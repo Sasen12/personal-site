@@ -1,4 +1,5 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { projects } from "@/data/projects"
 import AnimatedSection from "@/components/AnimatedSection"
@@ -11,6 +12,24 @@ const heroImages = [
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+  if (!project) return {}
+  return {
+    title: `${project.title} — Sasen`,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+    },
+  }
 }
 
 export default async function ProjectPage({
@@ -33,15 +52,13 @@ export default async function ProjectPage({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/30 dark:from-slate-900 dark:via-slate-900/80 dark:to-slate-900/40" />
         <AnimatedSection className="relative z-10 mx-auto w-full max-w-4xl px-6 pb-10 sm:pb-16">
-          <Link
-            href="/projects"
-            className="mb-6 inline-flex items-center gap-1 text-sm text-gray-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to projects
-          </Link>
+          <nav className="mb-6 flex items-center gap-2 text-xs text-gray-500 dark:text-slate-500">
+            <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">Home</Link>
+            <span>/</span>
+            <Link href="/projects" className="hover:text-indigo-600 dark:hover:text-indigo-400">Projects</Link>
+            <span>/</span>
+            <span className="text-gray-800 dark:text-slate-300">{project.title}</span>
+          </nav>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{project.title}</h1>
           <p className="mt-3 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-slate-400">
             {project.description}
@@ -51,6 +68,11 @@ export default async function ProjectPage({
 
       <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
         <AnimatedSection delay={0.15}>
+          <div className="mb-3 flex flex-wrap gap-2">
+            <span className="rounded-full border border-indigo-200 bg-indigo-50 px-3 py-0.5 text-xs font-medium text-indigo-600 dark:border-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-400">
+              {project.category}
+            </span>
+          </div>
           <div className="mb-8 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <span

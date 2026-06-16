@@ -21,6 +21,7 @@ export default async function Blog({
       excerpt: p.excerpt,
       tags: p.tags,
       content: "",
+      readingTime: p.readingTime,
     })),
     ...adminPosts.map((p) => ({
       slug: p.slug,
@@ -29,6 +30,7 @@ export default async function Blog({
       excerpt: p.excerpt,
       tags: p.tags,
       content: "",
+      readingTime: `${Math.max(1, Math.round((p.content || "").trim().split(/\s+/).length / 200))} min read`,
     })),
   ]
 

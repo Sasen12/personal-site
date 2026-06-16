@@ -1,10 +1,20 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import AnimatedSection from "@/components/AnimatedSection"
 import AnimatedCard from "@/components/AnimatedCard"
+import SkillBar from "@/components/SkillBar"
 import Timeline from "@/components/Timeline"
 import { experiences } from "@/data/experience"
 import { skills } from "@/data/skills"
-import { getSkillIcon } from "@/components/SkillIcon"
+
+export const metadata: Metadata = {
+  title: "About — Sasen",
+  description: "Full-stack developer, Unity tinkerer, and video editor based in Melbourne.",
+  openGraph: {
+    title: "About Sasen",
+    description: "Full-stack developer, Unity tinkerer, and video editor based in Melbourne.",
+  },
+}
 
 const categories = [...new Set(skills.map((s) => s.category))]
 
@@ -12,6 +22,11 @@ export default function About() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <AnimatedSection>
+        <nav className="mb-6 flex items-center gap-2 text-xs text-gray-500 dark:text-slate-500">
+          <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">Home</Link>
+          <span>/</span>
+          <span className="text-gray-800 dark:text-slate-300">About</span>
+        </nav>
         <h1 className="mb-6 text-4xl font-bold sm:text-6xl">About Me</h1>
       </AnimatedSection>
 
@@ -72,26 +87,18 @@ export default function About() {
         <h2 className="mb-6 mt-14 text-3xl font-bold">Skills</h2>
       </AnimatedSection>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((cat, i) => (
           <AnimatedCard key={cat} index={i}>
             <div className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-indigo-200 dark:border-slate-700 dark:hover:border-indigo-800">
-              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
                 {cat}
               </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills
-                  .filter((s) => s.category === cat)
-                  .map((s) => (
-                    <span
-                      key={s.name}
-                      className="inline-flex items-center gap-1 rounded-lg bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-slate-800 dark:text-slate-300"
-                    >
-                      <span className="text-xs">{getSkillIcon(s.name)}</span>
-                      {s.name}
-                    </span>
-                  ))}
-              </div>
+              {skills
+                .filter((s) => s.category === cat)
+                .map((s, j) => (
+                  <SkillBar key={s.name} name={s.name} proficiency={s.proficiency} delay={j * 0.1} />
+                ))}
             </div>
           </AnimatedCard>
         ))}

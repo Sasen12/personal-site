@@ -13,6 +13,13 @@ export interface Post {
   excerpt: string
   content: string
   tags: string[]
+  readingTime: string
+}
+
+function estimateReadingTime(text: string): string {
+  const words = text.trim().split(/\s+/).length
+  const minutes = Math.max(1, Math.round(words / 200))
+  return `${minutes} min read`
 }
 
 export function getAllPosts(): Post[] {
@@ -41,6 +48,7 @@ export function getAllPosts(): Post[] {
         excerpt: firstParagraph + (firstParagraph.length >= 150 ? "..." : ""),
         content,
         tags: data.tags || [],
+        readingTime: estimateReadingTime(content),
       }
     })
 
@@ -63,5 +71,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     excerpt: "",
     content: result.toString(),
     tags: data.tags || [],
+    readingTime: estimateReadingTime(content),
   }
 }
