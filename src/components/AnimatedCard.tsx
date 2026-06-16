@@ -16,12 +16,13 @@ export default function AnimatedCard({ children, className, index = 0 }: Props) 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 30, scale: 0.93 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.93 }}
       transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: [0.25, 0.1, 0.25, 1],
+        type: "spring",
+        stiffness: 120,
+        damping: 20,
+        delay: index * 0.08,
       }}
       className={className}
     >
