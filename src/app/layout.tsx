@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Sasen — Developer & Creator",
-  description: "Personal portfolio and blog by Sasen.",
+  description: "Portfolio and blog by Sasen. Building web apps, mobile apps, games, and tools.",
 }
 
 export default function RootLayout({
@@ -28,9 +28,7 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-screen flex flex-col bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
         <Navbar />
-        <main className="flex-1 mx-auto w-full max-w-4xl px-4 py-12">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
