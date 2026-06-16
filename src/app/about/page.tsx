@@ -1,15 +1,12 @@
 import Link from "next/link"
 import AnimatedSection from "@/components/AnimatedSection"
 import AnimatedCard from "@/components/AnimatedCard"
+import Timeline from "@/components/Timeline"
+import { experiences } from "@/data/experience"
+import { skills } from "@/data/skills"
+import { getSkillIcon } from "@/components/SkillIcon"
 
-const skills = [
-  { category: "Frontend", items: "React, Next.js, TypeScript, Tailwind" },
-  { category: "Mobile", items: "React Native, Expo, Kotlin, SwiftUI" },
-  { category: "Backend", items: "Node.js, Python, FastAPI, PostgreSQL" },
-  { category: "Game Dev", items: "Unity, C#, SpriteKit" },
-  { category: "Video", items: "Premiere Pro, After Effects, FL Studio" },
-  { category: "AI/ML", items: "OpenAI, LiveKit, MLX, MediaPipe" },
-]
+const categories = [...new Set(skills.map((s) => s.category))]
 
 export default function About() {
   return (
@@ -62,17 +59,39 @@ export default function About() {
       </AnimatedSection>
 
       <AnimatedSection delay={0.4}>
-        <h2 className="mb-6 mt-16 text-2xl font-bold">Skills</h2>
+        <h2 className="mb-6 mt-16 text-2xl font-bold">Experience</h2>
+        <Timeline items={experiences.filter((e) => e.type === "work")} />
+      </AnimatedSection>
+
+      <AnimatedSection delay={0.45}>
+        <h2 className="mb-6 mt-14 text-2xl font-bold">Education</h2>
+        <Timeline items={experiences.filter((e) => e.type === "education")} />
+      </AnimatedSection>
+
+      <AnimatedSection delay={0.5}>
+        <h2 className="mb-6 mt-14 text-2xl font-bold">Skills</h2>
       </AnimatedSection>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {skills.map((skill, i) => (
-          <AnimatedCard key={skill.category} index={i}>
+        {categories.map((cat, i) => (
+          <AnimatedCard key={cat} index={i}>
             <div className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-indigo-200 dark:border-slate-700 dark:hover:border-indigo-800">
-              <h3 className="mb-1 text-sm font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-                {skill.category}
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                {cat}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-slate-400">{skill.items}</p>
+              <div className="flex flex-wrap gap-2">
+                {skills
+                  .filter((s) => s.category === cat)
+                  .map((s) => (
+                    <span
+                      key={s.name}
+                      className="inline-flex items-center gap-1 rounded-lg bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-slate-800 dark:text-slate-300"
+                    >
+                      <span className="text-xs">{getSkillIcon(s.name)}</span>
+                      {s.name}
+                    </span>
+                  ))}
+              </div>
             </div>
           </AnimatedCard>
         ))}

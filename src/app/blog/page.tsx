@@ -4,11 +4,16 @@ import AnimatedCard from "@/components/AnimatedCard"
 import { getAllPosts } from "@/lib/posts"
 import { getAdminPosts } from "@/lib/admin-storage"
 
-export default async function Blog() {
+export default async function Blog({
+  searchParams,
+}: {
+  searchParams: Promise<{ tag?: string }>
+}) {
   const markdownPosts = getAllPosts()
   const adminPosts = await getAdminPosts()
+  const { tag } = await searchParams
 
-  const allPosts = [
+  let allPosts = [
     ...markdownPosts.map((p) => ({
       slug: p.slug,
       title: p.title,
@@ -29,14 +34,51 @@ export default async function Blog() {
 
   allPosts.sort((a, b) => (a.date > b.date ? -1 : 1))
 
+  const allTags = [...new Set(allPosts.flatMap((p) => p.tags))].sort()
+
+  if (tag) {
+    allPosts = allPosts.filter((p) => p.tags.includes(tag))
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <AnimatedSection>
         <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Blog</h1>
-        <p className="mb-10 text-gray-600 dark:text-slate-400">
+        <p className="mb-8 text-gray-600 dark:text-slate-400">
           Thoughts, tutorials, and things I&apos;ve learned.
         </p>
       </AnimatedSection>
+
+      {allTags.length > 0 && (
+        <AnimatedSection delay={0.05}>
+          <div className="mb-8 flex flex-wrap gap-2">
+            <a
+              href="/blog"
+              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                !tag
+                  ? "bg-indigo-600 text-white"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700"
+              }`}
+            >
+              All
+            </a>
+            {allTags.map((t) => (
+              <a
+                key={t}
+                href={`/blog?tag=${encodeURIComponent(t)}`}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                  tag === t
+                    ? "bg-indigo-600 text-white"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700"
+                }`}
+              >
+                {t}
+              </a>
+            ))}
+          </div>
+        </AnimatedSection>
+      )}
+
       {allPosts.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2">
           {allPosts.map((post, i) => (
@@ -47,10 +89,10 @@ export default async function Blog() {
         </div>
       ) : (
         <div className="rounded-xl border border-dashed border-gray-300 p-16 text-center dark:border-slate-600">
-          <p className="text-gray-500">No posts yet.</p>
-          <p className="mt-2 text-sm text-gray-400">
-            Write your first post at <code className="text-indigo-600 dark:text-indigo-400">/admin</code> after deploying.
-          </p>
+          <p className="text-gray-500">No posts found for this tag.</p>
+          <a href="/blog" className="mt-2 inline-block text-sm text-indigo-600 hover:underline dark:text-indigo-400">
+            Clear filter
+          </a>
         </div>
       )}
     </div>

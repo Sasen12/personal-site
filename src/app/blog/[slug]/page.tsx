@@ -55,7 +55,20 @@ export default async function BlogPost({
               day: "numeric",
             })}
           </p>
-          <h1 className="text-3xl font-bold sm:text-4xl">{post.title}</h1>
+          <h1 className="mb-3 text-3xl font-bold sm:text-4xl">{post.title}</h1>
+          {post.tags && post.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5">
+              {post.tags.map((tag) => (
+                <a
+                  key={tag}
+                  href={`/blog?tag=${encodeURIComponent(tag)}`}
+                  className="rounded-md bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-400"
+                >
+                  {tag}
+                </a>
+              ))}
+            </div>
+          )}
         </header>
 
         <div

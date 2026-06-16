@@ -15,9 +15,21 @@ export default function BlogCard({ post }: { post: Post }) {
         <h3 className="mb-2 text-lg font-semibold group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
           {post.title}
         </h3>
-        <p className="text-sm leading-relaxed text-gray-600 dark:text-slate-400">
+        <p className="mb-3 text-sm leading-relaxed text-gray-600 dark:text-slate-400">
           {post.excerpt}
         </p>
+        {post.tags && post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-md bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </Link>
   )
