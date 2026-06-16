@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <AnimatedSection>
-        <h1 className="mb-6 text-3xl font-bold sm:text-4xl">About Me</h1>
+        <h1 className="mb-6 text-4xl font-bold sm:text-6xl">About Me</h1>
       </AnimatedSection>
 
       <AnimatedSection delay={0.15}>
@@ -59,17 +59,17 @@ export default function About() {
       </AnimatedSection>
 
       <AnimatedSection delay={0.4}>
-        <h2 className="mb-6 mt-16 text-2xl font-bold">Experience</h2>
+        <h2 className="mb-6 mt-16 text-3xl font-bold">Experience</h2>
         <Timeline items={experiences.filter((e) => e.type === "work")} />
       </AnimatedSection>
 
       <AnimatedSection delay={0.45}>
-        <h2 className="mb-6 mt-14 text-2xl font-bold">Education</h2>
+        <h2 className="mb-6 mt-14 text-3xl font-bold">Education</h2>
         <Timeline items={experiences.filter((e) => e.type === "education")} />
       </AnimatedSection>
 
       <AnimatedSection delay={0.5}>
-        <h2 className="mb-6 mt-14 text-2xl font-bold">Skills</h2>
+        <h2 className="mb-6 mt-14 text-3xl font-bold">Skills</h2>
       </AnimatedSection>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

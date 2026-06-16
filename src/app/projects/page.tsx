@@ -7,8 +7,8 @@ export default function Projects() {
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <AnimatedSection>
-        <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Projects</h1>
-        <p className="mb-10 text-gray-600 dark:text-slate-400">
+        <h1 className="mb-2 text-4xl font-bold sm:text-6xl">Projects</h1>
+        <p className="mb-10 text-lg text-gray-600 dark:text-slate-400">
           Things I&apos;ve built and worked on.
         </p>
       </AnimatedSection>

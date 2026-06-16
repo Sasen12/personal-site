@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <ParallaxHero>
-        <div className="relative px-6 pt-28 pb-32 sm:pt-36 sm:pb-44">
+        <div className="relative w-full px-6">
           <div className="mx-auto max-w-5xl">
             <AnimatedSection delay={0}>
               <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-700 backdrop-blur-sm dark:text-indigo-300">
@@ -24,7 +24,7 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.15}>
-              <h1 className="mt-6 mb-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
+              <h1 className="mt-6 mb-4 text-5xl font-bold tracking-tight text-gray-900 sm:text-8xl dark:text-white">
                 Hi, I&apos;m{" "}
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">
                   Sasen
@@ -34,24 +34,24 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <p className="max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+              <p className="max-w-2xl text-xl leading-relaxed text-gray-600 sm:text-2xl dark:text-gray-300">
                 Full-stack developer, Unity tinkerer, and video editor. I build web apps,
                 mobile apps, games, tools, and occasionally make music.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={0.45}>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-indigo-700 hover:shadow-lg dark:bg-white dark:text-gray-900 dark:hover:bg-indigo-50"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-7 py-3.5 text-base font-semibold text-white transition-all hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/25 dark:bg-white dark:text-gray-900 dark:hover:bg-indigo-50 dark:hover:shadow-indigo-500/20"
                 >
                   View Projects
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 rounded-xl border border-gray-400 px-6 py-3 text-sm font-medium text-gray-700 transition-all hover:border-gray-900 hover:text-gray-900 dark:border-gray-600 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-xl border border-gray-400 px-7 py-3.5 text-base font-medium text-gray-700 transition-all hover:border-gray-900 hover:text-gray-900 dark:border-gray-600 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:text-white"
                 >
                   Get in Touch
                 </Link>
@@ -61,13 +61,13 @@ export default function Home() {
         </div>
       </ParallaxHero>
 
-      <div className="mx-auto max-w-5xl space-y-24 px-6 py-24">
+      <div className="mx-auto max-w-5xl space-y-32 px-6 py-28">
         <AnimatedSection>
           <section>
-            <div className="mb-10 flex items-end justify-between">
+            <div className="mb-12 flex items-end justify-between">
               <div>
-                <h2 className="text-2xl font-bold sm:text-3xl">Projects</h2>
-                <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
+                <h2 className="text-3xl font-bold sm:text-5xl">Projects</h2>
+                <p className="mt-2 text-base text-gray-600 dark:text-slate-400">
                   Things I&apos;ve built
                 </p>
               </div>
@@ -96,12 +96,12 @@ export default function Home() {
           </section>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.2}>
+        <AnimatedSection delay={0.15}>
           <section>
-            <div className="mb-10 flex items-end justify-between">
+            <div className="mb-12 flex items-end justify-between">
               <div>
-                <h2 className="text-2xl font-bold sm:text-3xl">Latest Posts</h2>
-                <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
+                <h2 className="text-3xl font-bold sm:text-5xl">Latest Posts</h2>
+                <p className="mt-2 text-base text-gray-600 dark:text-slate-400">
                   Thoughts and things I&apos;ve learned
                 </p>
               </div>

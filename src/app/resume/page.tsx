@@ -16,8 +16,8 @@ export default function Resume() {
       <AnimatedSection>
         <div className="mb-10 flex items-start justify-between">
           <div>
-            <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Resume</h1>
-            <p className="text-gray-600 dark:text-slate-400">Experience, education, and skills.</p>
+            <h1 className="mb-2 text-4xl font-bold sm:text-6xl">Resume</h1>
+            <p className="text-base text-gray-600 dark:text-slate-400">Experience, education, and skills.</p>
           </div>
           {hasPdf && (
             <a
@@ -35,17 +35,17 @@ export default function Resume() {
       </AnimatedSection>
 
       <AnimatedSection delay={0.1}>
-        <h2 className="mb-6 text-xl font-bold">Experience</h2>
+        <h2 className="mb-6 text-3xl font-bold">Experience</h2>
         <Timeline items={experiences.filter((e) => e.type === "work")} />
       </AnimatedSection>
 
       <AnimatedSection delay={0.2}>
-        <h2 className="mb-6 mt-14 text-xl font-bold">Education</h2>
+        <h2 className="mb-6 mt-14 text-3xl font-bold">Education</h2>
         <Timeline items={experiences.filter((e) => e.type === "education")} />
       </AnimatedSection>
 
       <AnimatedSection delay={0.3}>
-        <h2 className="mb-6 mt-14 text-xl font-bold">Skills</h2>
+        <h2 className="mb-6 mt-14 text-3xl font-bold">Skills</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {categories.map((cat, i) => (
             <AnimatedCard key={cat} index={i}>
@@ -72,7 +72,7 @@ export default function Resume() {
       </AnimatedSection>
 
       <AnimatedSection delay={0.35}>
-        <h2 className="mb-6 mt-14 text-xl font-bold">Achievements</h2>
+        <h2 className="mb-6 mt-14 text-3xl font-bold">Achievements</h2>
         <div className="space-y-4">
           <AnimatedCard index={0}>
             <div className="rounded-xl border border-gray-200 p-5 dark:border-slate-700">
