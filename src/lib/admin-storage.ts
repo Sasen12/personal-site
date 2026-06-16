@@ -13,20 +13,24 @@ export interface AdminPost {
 
 let memoryStore: AdminPost[] = []
 
-function isNetlify(): boolean {
-  return !!process.env.NETLIFY
-}
-
 async function getBlobStore() {
   const { getStore } = await import("@netlify/blobs")
   return getStore({ name: "blog-posts" })
 }
 
-export async function getAdminPosts(): Promise<AdminPost[]> {
-  if (isNetlify()) {
+async function getBlobPosts(): Promise<AdminPost[]> {
+  try {
     const store = await getBlobStore()
     const data = await store.get("posts", { type: "json" })
     return (data as AdminPost[]) || []
+  } catch {
+    return []
+  }
+}
+
+export async function getAdminPosts(): Promise<AdminPost[]> {
+  if (process.env.NETLIFY) {
+    return getBlobPosts()
   }
   return memoryStore
 }
@@ -50,13 +54,17 @@ export async function saveAdminPost(post: AdminPost): Promise<void> {
     post.excerpt = firstP + (firstP.length >= 150 ? "..." : "")
   }
 
-  if (isNetlify()) {
-    const store = await getBlobStore()
-    const posts = await getAdminPosts()
-    const idx = posts.findIndex((p) => p.slug === post.slug)
-    if (idx >= 0) posts[idx] = post
-    else posts.push(post)
-    await store.setJSON("posts", posts)
+  if (process.env.NETLIFY && !process.env.CI) {
+    try {
+      const store = await getBlobStore()
+      const posts = await getBlobPosts()
+      const idx = posts.findIndex((p) => p.slug === post.slug)
+      if (idx >= 0) posts[idx] = post
+      else posts.push(post)
+      await store.setJSON("posts", posts)
+    } catch {
+      memoryStore.push(post)
+    }
   } else {
     const idx = memoryStore.findIndex((p) => p.slug === post.slug)
     if (idx >= 0) memoryStore[idx] = post
@@ -65,11 +73,15 @@ export async function saveAdminPost(post: AdminPost): Promise<void> {
 }
 
 export async function deleteAdminPost(slug: string): Promise<void> {
-  if (isNetlify()) {
-    const store = await getBlobStore()
-    const posts = await getAdminPosts()
-    const filtered = posts.filter((p) => p.slug !== slug)
-    await store.setJSON("posts", filtered)
+  if (process.env.NETLIFY && !process.env.CI) {
+    try {
+      const store = await getBlobStore()
+      const posts = await getBlobPosts()
+      const filtered = posts.filter((p) => p.slug !== slug)
+      await store.setJSON("posts", filtered)
+    } catch {
+      memoryStore = memoryStore.filter((p) => p.slug !== slug)
+    }
   } else {
     memoryStore = memoryStore.filter((p) => p.slug !== slug)
   }
