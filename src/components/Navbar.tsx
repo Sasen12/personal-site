@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
+import ThemeToggle from "./ThemeToggle"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -22,26 +23,28 @@ export default function Navbar() {
           <span className="text-indigo-600 dark:text-indigo-400">S</span>asen
         </Link>
 
-        <button
-          className="sm:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-          </svg>
-        </button>
-
-        <div className="hidden items-center gap-8 sm:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-gray-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="flex items-center gap-2 sm:gap-4">
+          <div className="hidden items-center gap-8 sm:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-gray-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <ThemeToggle />
+          <button
+            className="sm:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
         </div>
       </div>
 
