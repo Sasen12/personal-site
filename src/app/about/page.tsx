@@ -19,7 +19,7 @@ export default function About() {
       </AnimatedSection>
 
       <AnimatedSection delay={0.15}>
-        <div className="space-y-4 text-gray-600 dark:text-gray-400">
+        <div className="space-y-4 text-gray-600 dark:text-slate-400">
           <p className="leading-relaxed">
             Full-stack developer, Unity tinkerer, and video editor based in Melbourne.
             I build web apps, mobile apps, games, and occasionally make music or motion graphics.
@@ -40,13 +40,13 @@ export default function About() {
         <div className="mt-16 grid gap-8 sm:grid-cols-2">
           <div className="order-2 sm:order-1">
             <h2 className="mb-3 text-2xl font-bold">Where It Started</h2>
-            <p className="leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="leading-relaxed text-gray-600 dark:text-slate-400">
               When I was 8 years old, I did my first hackathon at Casey Tech School with my dad.
               I built something simple, but the real moment came when I had to present it in front
               of a panel of judges. Standing up there at 8 years old, explaining what I&apos;d made
               — that&apos;s when I knew I loved building things.
             </p>
-            <p className="mt-3 leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="mt-3 leading-relaxed text-gray-600 dark:text-slate-400">
               That feeling never really left. It&apos;s the same energy I get today when a new app
               compiles, a game scene clicks into place, or an AI agent actually works.
             </p>
@@ -68,11 +68,11 @@ export default function About() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((skill, i) => (
           <AnimatedCard key={skill.category} index={i}>
-            <div className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-indigo-200 dark:border-gray-800 dark:hover:border-indigo-800">
+            <div className="rounded-xl border border-gray-200 p-5 transition-colors hover:border-indigo-200 dark:border-slate-700 dark:hover:border-indigo-800">
               <h3 className="mb-1 text-sm font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
                 {skill.category}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{skill.items}</p>
+              <p className="text-sm text-gray-600 dark:text-slate-400">{skill.items}</p>
             </div>
           </AnimatedCard>
         ))}

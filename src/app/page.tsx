@@ -67,7 +67,7 @@ export default function Home() {
             <div className="mb-10 flex items-end justify-between">
               <div>
                 <h2 className="text-2xl font-bold sm:text-3xl">Projects</h2>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
                   Things I&apos;ve built
                 </p>
               </div>
@@ -101,7 +101,7 @@ export default function Home() {
             <div className="mb-10 flex items-end justify-between">
               <div>
                 <h2 className="text-2xl font-bold sm:text-3xl">Latest Posts</h2>
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
                   Thoughts and things I&apos;ve learned
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default function Home() {
                 ))}
               </div>
             ) : (
-              <div className="rounded-xl border border-dashed border-gray-300 p-10 text-center text-sm text-gray-500 dark:border-gray-700">
+              <div className="rounded-xl border border-dashed border-gray-300 p-10 text-center text-sm text-gray-500 dark:border-slate-600">
                 No posts yet. Write your first one at{" "}
                 <code className="text-indigo-600 dark:text-indigo-400">/admin</code>.
               </div>

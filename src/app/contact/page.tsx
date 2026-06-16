@@ -35,7 +35,7 @@ export default function Contact() {
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <AnimatedSection>
         <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Get in Touch</h1>
-        <p className="mb-10 text-gray-600 dark:text-gray-400">
+        <p className="mb-10 text-gray-600 dark:text-slate-400">
           Have a project in mind or just want to say hi? Drop me a message.
         </p>
       </AnimatedSection>
@@ -64,7 +64,7 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
+                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
                 />
               </div>
               <div>
@@ -76,7 +76,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
+                  className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
                 />
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function Contact() {
                 name="message"
                 rows={5}
                 required
-                className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
+                className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
               />
             </div>
 
@@ -111,14 +111,14 @@ export default function Contact() {
       )}
 
       <AnimatedSection delay={0.3}>
-        <div className="mt-16 rounded-xl border border-gray-200 bg-gray-50 p-6 dark:border-gray-800 dark:bg-gray-900">
+        <div className="mt-16 rounded-xl border border-gray-200 bg-gray-50 p-6 dark:border-slate-700 dark:bg-slate-800">
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-gray-500">
             Other ways to reach me
           </h2>
           <div className="flex flex-wrap gap-6 text-sm">
             <a
               href="mailto:techsavvy356@gmail.com"
-              className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400"
+              className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
             >
               techsavvy356@gmail.com
             </a>
@@ -126,7 +126,7 @@ export default function Contact() {
               href="https://github.com/Sasen12"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400"
+              className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
             >
               github.com/Sasen12
             </a>
@@ -134,7 +134,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/sasen-perera-8b8a13337"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400"
+              className="text-gray-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
             >
               LinkedIn
             </a>

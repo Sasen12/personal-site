@@ -4,19 +4,19 @@ import type { Project } from "@/data/projects"
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.slug}`} className="group block">
-      <div className="rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-indigo-800">
+      <div className="rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-800">
         <div className="mb-1 flex items-center gap-2">
           <h3 className="text-lg font-semibold">{project.title}</h3>
           <span className="inline-flex h-2 w-2 rounded-full bg-indigo-500 opacity-0 transition-opacity group-hover:opacity-100" />
         </div>
-        <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+        <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-slate-400">
           {project.description}
         </p>
         <div className="mb-5 flex flex-wrap gap-1.5">
           {project.tech.map((t) => (
             <span
               key={t}
-              className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+              className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-slate-700 dark:text-slate-300"
             >
               {t}
             </span>

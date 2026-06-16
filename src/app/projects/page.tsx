@@ -8,7 +8,7 @@ export default function Projects() {
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <AnimatedSection>
         <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Projects</h1>
-        <p className="mb-10 text-gray-600 dark:text-gray-400">
+        <p className="mb-10 text-gray-600 dark:text-slate-400">
           Things I&apos;ve built and worked on.
         </p>
       </AnimatedSection>
