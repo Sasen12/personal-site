@@ -37,6 +37,31 @@ export default function About() {
       </AnimatedSection>
 
       <AnimatedSection delay={0.3}>
+        <div className="mt-16 grid gap-8 sm:grid-cols-2">
+          <div className="order-2 sm:order-1">
+            <h2 className="mb-3 text-2xl font-bold">Where It Started</h2>
+            <p className="leading-relaxed text-gray-600 dark:text-gray-400">
+              When I was 8 years old, I did my first hackathon at Casey Tech School with my dad.
+              I built something simple, but the real moment came when I had to present it in front
+              of a panel of judges. Standing up there at 8 years old, explaining what I&apos;d made
+              — that&apos;s when I knew I loved building things.
+            </p>
+            <p className="mt-3 leading-relaxed text-gray-600 dark:text-gray-400">
+              That feeling never really left. It&apos;s the same energy I get today when a new app
+              compiles, a game scene clicks into place, or an AI agent actually works.
+            </p>
+          </div>
+          <div className="order-1 sm:order-2">
+            <img
+              src="/images/hackathon.jpg"
+              alt="Young me at Casey Tech School hackathon"
+              className="w-full rounded-xl object-cover shadow-lg"
+            />
+          </div>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection delay={0.4}>
         <h2 className="mb-6 mt-16 text-2xl font-bold">Skills</h2>
       </AnimatedSection>
 
@@ -53,7 +78,7 @@ export default function About() {
         ))}
       </div>
 
-      <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.5}>
         <div className="mt-12">
           <Link
             href="/contact"
