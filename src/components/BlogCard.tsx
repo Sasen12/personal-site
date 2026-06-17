@@ -4,7 +4,17 @@ import type { Post } from "@/lib/posts"
 export default function BlogCard({ post }: { post: Post }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block">
-      <div className="rounded-xl border border-gray-200 bg-white p-6 transition-all hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-800">
+      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5 dark:border-slate-700 dark:bg-slate-800 dark:hover:border-indigo-800">
+        {post.image && (
+          <div className="aspect-[2/1] overflow-hidden">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+        )}
+        <div className="p-6">
         <div className="mb-2 flex items-center gap-3 text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
           <span>
             {new Date(post.date).toLocaleDateString("en-US", {
@@ -34,6 +44,7 @@ export default function BlogCard({ post }: { post: Post }) {
             ))}
           </div>
         )}
+      </div>
       </div>
     </Link>
   )

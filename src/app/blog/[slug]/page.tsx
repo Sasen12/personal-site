@@ -102,6 +102,16 @@ export default async function BlogPost({
             )}
           </header>
 
+          {post.image && (
+            <div className="mb-8 overflow-hidden rounded-xl">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full object-cover"
+              />
+            </div>
+          )}
+
           <div
             className="prose prose-gray max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-indigo-600 dark:prose-a:text-indigo-400"
             dangerouslySetInnerHTML={{ __html: post.content }}

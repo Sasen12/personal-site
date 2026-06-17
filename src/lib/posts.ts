@@ -14,6 +14,7 @@ export interface Post {
   content: string
   tags: string[]
   readingTime: string
+  image?: string
 }
 
 function estimateReadingTime(text: string): string {
@@ -49,6 +50,7 @@ export function getAllPosts(): Post[] {
         content,
         tags: data.tags || [],
         readingTime: estimateReadingTime(content),
+        image: data.image || undefined,
       }
     })
 
