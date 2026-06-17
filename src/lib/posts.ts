@@ -74,5 +74,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     content: result.toString(),
     tags: data.tags || [],
     readingTime: estimateReadingTime(content),
+    image: data.image || undefined,
   }
 }
