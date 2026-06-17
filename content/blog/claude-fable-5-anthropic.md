@@ -2,7 +2,7 @@
 title: "Claude Fable 5: Anthropic's Model That Actually *Thinks* Before Speaking"
 date: 2026-06-07
 tags: ["ai", "anthropic", "llm", "claude"]
-image: /images/blog/tech.svg
+image: /images/blog/tech.jpg
 ---
 
 ## I Spent a Weekend With Fable 5 — Here's the Unpolished Take

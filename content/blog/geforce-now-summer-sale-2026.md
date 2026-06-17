@@ -2,7 +2,7 @@
 title: "GeForce NOW Summer Sale: $70 Off Isn't the Story"
 date: 2026-06-10
 tags: ["NVIDIA", "Gaming", "Cloud Gaming"]
-image: /images/blog/nvidia.svg
+image: /images/blog/nvidia.jpg
 ---
 
 ## Cloud Gaming Finally Feels Like a Real Product

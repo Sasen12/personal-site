@@ -2,7 +2,7 @@
 title: "Android 17's Material 3 Expressive Is the Design Refresh Android Actually Needed"
 date: 2026-06-02
 tags: ["Android", "UI", "Design"]
-image: /images/blog/android.svg
+image: /images/blog/android.png
 ---
 
 I've been running the Android 17 beta for about a week now, and the new Material 3 Expressive design language is the first time in years I've actually *noticed* the UI changes instead of squinting to find them.

@@ -2,7 +2,7 @@
 title: "Screen Reactions Is Silly, Overengineered, and I Kind of Love It"
 date: 2026-05-22
 tags: ["Android", "Mobile", "UX"]
-image: /images/blog/android.svg
+image: /images/blog/android.png
 ---
 
 When I first read about Android 17's Screen Reactions feature — overlaying a floating selfie camera window onto your screen recording — I laughed. It felt like a TikTok feature grafted onto an OS. After using it for a few days, I was right. But I also don't want to go back.

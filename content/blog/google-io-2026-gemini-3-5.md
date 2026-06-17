@@ -2,7 +2,7 @@
 title: "Gemini 3.5 Flash at I/O 2026 — 4x Faster and It Actually Shows"
 date: 2026-05-19
 tags: ["Google", "AI", "Gemini"]
-image: /images/blog/google.svg
+image: /images/blog/google.jpg
 ---
 
 I watched the Google I/O 2026 keynote from my desk with a coffee in hand, fully expecting the usual "we're the fastest" fluff. But when Sundar showed Gemini 3.5 Flash hitting 4x the throughput of GPT-5o on identical hardware, I actually sat up.

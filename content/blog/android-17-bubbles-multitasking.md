@@ -2,7 +2,7 @@
 title: "Android 17's Bubbles — Finally, Chat Heads for Everything"
 date: 2026-06-12
 tags: ["Google", "Android"]
-image: /images/blog/android.svg
+image: /images/blog/android.png
 ---
 
 Android 17's headline feature is system-wide Bubbles, and after using the beta for a month, I can confidently say: this is the best multitasking improvement since split-screen.

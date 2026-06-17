@@ -2,7 +2,7 @@
 title: "Vera Rubin: NVIDIA's Next Architectural Giant"
 date: 2026-06-05
 tags: ["NVIDIA", "Hardware", "AI", "GPUs"]
-image: /images/blog/nvidia.svg
+image: /images/blog/nvidia.jpg
 ---
 
 ## The King is Dead, Long Live the King

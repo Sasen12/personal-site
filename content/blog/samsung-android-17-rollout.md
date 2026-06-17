@@ -2,7 +2,7 @@
 title: "Android 17 Hits Galaxy Devices — Here's What Actually Changed"
 date: 2026-05-12
 tags: ["Samsung", "Android", "Software"]
-image: /images/blog/samsung.svg
+image: /images/blog/samsung.jpg
 ---
 
 Android 17 started rolling out to Galaxy devices this week, and my S25 Ultra got the OTA two days ago. I've been running it since. Here's the unfiltered take.

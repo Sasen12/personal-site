@@ -2,7 +2,7 @@
 title: "Siri Finally Woke Up — WWDC 2026 Keynote Reaction"
 date: 2026-06-09
 tags: ["Apple", "AI", "WWDC", "Siri"]
-image: /images/blog/apple.svg
+image: /images/blog/apple.jpg
 ---
 
 I'll be honest — I've been burned by Siri promises before. Every WWDC for the past half decade, Tim Cook walks on stage, plays the "we hear you" card, and shows a slightly less embarrassing Siri demo. But this year? This year felt different.

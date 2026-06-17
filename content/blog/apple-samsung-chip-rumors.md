@@ -2,7 +2,7 @@
 title: "Apple-Samsung Chip Alliance: Taiwan Contingency or Real Strategy Shift?"
 date: 2026-06-15
 tags: ["Apple", "Hardware", "Chips", "Supply Chain"]
-image: /images/blog/apple.svg
+image: /images/blog/apple.jpg
 ---
 
 The rumor mill lit up this week: Apple is reportedly in talks with Samsung to produce future A-series and M-series chips at Samsung's Texas fab. On the surface, this sounds wild — Apple and Samsung are fierce rivals in phones, displays, and basically everything else. But dig deeper and it starts to make uncomfortable sense.

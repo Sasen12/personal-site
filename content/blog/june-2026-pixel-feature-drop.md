@@ -2,7 +2,7 @@
 title: "June 2026 Pixel Drop — Magic Cue and Finally, Real Airdrop Compatibility"
 date: 2026-06-15
 tags: ["Google", "Android", "Hardware"]
-image: /images/blog/android.svg
+image: /images/blog/android.png
 ---
 
 The June 2026 Pixel Feature Drop landed today, and there are two things worth talking about: Magic Cue and Quick Share's Airdrop compatibility.

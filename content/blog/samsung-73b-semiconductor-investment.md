@@ -2,7 +2,7 @@
 title: "$73 Billion on Chips? Samsung Isn't Messing Around"
 date: 2026-04-02
 tags: ["Samsung", "Semiconductors", "AI", "Hardware"]
-image: /images/blog/samsung.svg
+image: /images/blog/samsung.jpg
 ---
 
 Samsung announced a $73 billion investment in semiconductor capex and R&D through 2028. That's not a typo. $73 billion. Let me break down why this matters more than any phone launch this year.

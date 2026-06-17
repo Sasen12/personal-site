@@ -2,7 +2,7 @@
 title: "Android 17 Is Here — Bubbles, Screen Reactions, and Genuine Polish"
 date: 2026-06-10
 tags: ["Google", "Android"]
-image: /images/blog/android.svg
+image: /images/blog/android.png
 ---
 
 Android 17 started rolling out to Pixels today, and for once, the update isn't just a security patch with a new number. This is a genuinely feature-rich release that changes how I use my phone.

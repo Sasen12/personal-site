@@ -2,7 +2,7 @@
 title: "7 Years of Updates for 130+ Devices — Samsung Sets the Standard"
 date: 2026-02-10
 tags: ["Samsung", "Android", "Software", "Hardware"]
-image: /images/blog/samsung.svg
+image: /images/blog/samsung.jpg
 ---
 
 Samsung announced they're expanding their 7-year major Android update policy to cover over 130 Galaxy devices, including mid-range A-series phones and tablets. This is a bigger deal than most people realize.

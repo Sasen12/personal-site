@@ -2,7 +2,7 @@
 title: "DLSS 5: Frame Generation Just Got Scary Good"
 date: 2026-06-06
 tags: ["NVIDIA", "Gaming", "AI", "GPUs"]
-image: /images/blog/nvidia.svg
+image: /images/blog/nvidia.jpg
 ---
 
 ## When Does a Frame Stop Being a Frame?

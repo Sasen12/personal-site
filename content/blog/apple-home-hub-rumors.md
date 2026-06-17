@@ -2,7 +2,7 @@
 title: "An Apple Home Hub? I've Heard This One Before"
 date: 2026-06-16
 tags: ["Apple", "Smart Home", "HomeKit", "Rumors"]
-image: /images/blog/apple.svg
+image: /images/blog/apple.jpg
 ---
 
 Every two years like clockwork, the rumor mill churns out "Apple is finally building a smart home hub with a screen." I've been burned by this rumor since the iPhone 6 era. But this latest report from a usually reliable supply chain analyst has details that feel… specific.

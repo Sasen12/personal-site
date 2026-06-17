@@ -2,7 +2,7 @@
 title: "macOS 27: The Pro Update Power Users Have Been Waiting For"
 date: 2026-06-11
 tags: ["Apple", "macOS", "WWDC", "Developer Tools"]
-image: /images/blog/apple.svg
+image: /images/blog/apple.jpg
 ---
 
 I've been a macOS power user since Snow Leopard, and I've learned to temper my expectations for WWDC macOS announcements. Most years we get a new system pref pane and a screensaver. This year? They actually addressed the things that make me want to throw my MacBook out the window.

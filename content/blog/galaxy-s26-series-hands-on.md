@@ -2,7 +2,7 @@
 title: "I Went Hands-On With the Galaxy S26 Series — and I'm Actually Impressed"
 date: 2026-01-22
 tags: ["Samsung", "Android", "AI", "Hardware"]
-image: /images/blog/samsung.svg
+image: /images/blog/samsung.jpg
 ---
 
 Samsung just wrapped up Unpacked 2026 and I walked away from the demo floor with a genuine smile. The Galaxy S26, S26+, and S26 Ultra are here, and yeah — they're exactly what you'd expect on paper. But the software story this year actually delivers.

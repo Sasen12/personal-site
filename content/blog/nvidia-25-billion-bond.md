@@ -2,7 +2,7 @@
 title: "$25B in Bonds? NVIDIA Is Playing Chess While Everyone Plays Checkers"
 date: 2026-03-18
 tags: ["NVIDIA", "Business"]
-image: /images/blog/nvidia.svg
+image: /images/blog/nvidia.jpg
 ---
 
 ## Why Is the Richest Chip Company Borrowing Money?

@@ -2,7 +2,7 @@
 title: "Apple's New Parental Controls: Actually Useful or Just More Surveillance?"
 date: 2026-06-13
 tags: ["Apple", "Privacy", "iOS", "Safety"]
-image: /images/blog/apple.svg
+image: /images/blog/apple.jpg
 ---
 
 Apple announced a significant overhaul of parental controls and child safety features at WWDC, and I have complicated feelings about it. On one hand, the new tools are genuinely powerful. On the other hand, I'm watching the same people who demanded these features now worry about "Apple tracking children."

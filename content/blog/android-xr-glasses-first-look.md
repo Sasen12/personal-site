@@ -2,7 +2,7 @@
 title: "I Tried Android XR Glasses — And I'm Not Returning Them"
 date: 2026-06-05
 tags: ["Google", "Android", "Hardware"]
-image: /images/blog/google.svg
+image: /images/blog/google.jpg
 ---
 Google finally shipped consumer AR glasses with Samsung and Warby Parker. I got my hands on a pair and have been wearing them for a week. Here's my honest take.
 

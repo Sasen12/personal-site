@@ -2,7 +2,7 @@
 title: "Quick Share + AirDrop Interop Is the Cross-Platform Bridge We Actually Needed"
 date: 2026-05-14
 tags: ["Android", "Mobile", "Connectivity"]
-image: /images/blog/android.svg
+image: /images/blog/android.png
 ---
 
 It finally happened — Quick Share on Pixel devices can now talk to Apple's AirDrop. I've been testing this on my Pixel 9 Pro XL with a friend's MacBook and iPhone 17 Pro, and I'm genuinely surprised at how seamless it is.

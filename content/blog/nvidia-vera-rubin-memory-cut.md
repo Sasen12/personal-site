@@ -2,7 +2,7 @@
 title: "Vera Rubin's Memory Cut: When Physics Bites Back"
 date: 2026-05-19
 tags: ["NVIDIA", "Hardware", "GPUs", "Supply Chain"]
-image: /images/blog/nvidia.svg
+image: /images/blog/nvidia.jpg
 ---
 
 ## Reality Check for the Superchip

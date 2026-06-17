@@ -2,7 +2,7 @@
 title: "Dynamo 1.0: NVIDIA Finally Open-Sources Its Inference Stack"
 date: 2026-06-12
 tags: ["NVIDIA", "AI", "Open Source", "Software"]
-image: /images/blog/nvidia.svg
+image: /images/blog/nvidia.jpg
 ---
 
 ## This Is the Release I've Been Waiting For

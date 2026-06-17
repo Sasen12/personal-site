@@ -2,7 +2,7 @@
 title: "Pixel 10a Gets Voice Translate — The Best Flagship Feature Google Refuses to Keep Exclusive"
 date: 2026-05-30
 tags: ["Android", "Pixel", "AI"]
-image: /images/blog/android.svg
+image: /images/blog/android.png
 ---
 
 The Pixel 10a launched with Voice Translate, the real-time conversation translation feature that debuted on the Pixel 10 series. And honestly? This is exactly the right call.
