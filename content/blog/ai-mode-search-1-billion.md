@@ -2,7 +2,7 @@
 title: "AI Mode in Search Hit 1 Billion Users — Search Will Never Be the Same"
 date: 2026-05-28
 tags: ["Google", "AI", "Gemini"]
-image: https://picsum.photos/seed/ai-mode-search-1-billion/1200/630
+image: /images/blog/google.svg
 ---
 
 Google announced that AI Mode in Search crossed 1 billion monthly active users. That's a number so large it almost loses meaning — but let's sit with it for a second. A fundamentally new way of interacting with the internet reached a billion people in under a year.

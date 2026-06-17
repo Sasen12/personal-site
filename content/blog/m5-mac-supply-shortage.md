@@ -2,7 +2,7 @@
 title: "M5 Mac Delays: The RAM Shortage Nobody Saw Coming"
 date: 2026-06-14
 tags: ["Apple", "Hardware", "M5", "Mac"]
-image: https://picsum.photos/seed/m5-mac-supply-shortage/1200/630
+image: /images/blog/apple.svg
 ---
 
 The news broke this week that M5 Mac shipments are being delayed due to a shortage of high-bandwidth unified memory modules. Apparently the advanced DRAM needed for the M5's expanded memory controller — which supports up to 512GB in the Ultra variant — is facing serious production yield issues at SK Hynix and Samsung.

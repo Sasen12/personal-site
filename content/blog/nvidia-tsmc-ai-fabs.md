@@ -2,7 +2,7 @@
 title: "TSMC Fabs Are Getting an AI Upgrade — From NVIDIA"
 date: 2026-05-28
 tags: ["NVIDIA", "AI", "Hardware", "Manufacturing"]
-image: https://picsum.photos/seed/nvidia-tsmc-ai-fabs/1200/630
+image: /images/blog/nvidia.svg
 ---
 
 ## The Chipmaker That Chips the Chipmakers

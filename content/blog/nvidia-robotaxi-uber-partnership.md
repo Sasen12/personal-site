@@ -2,7 +2,7 @@
 title: "Uber + NVIDIA: The Robotaxi Alliance Nobody Saw Coming"
 date: 2026-04-15
 tags: ["NVIDIA", "AI", "Robotics", "Autonomous Vehicles"]
-image: https://picsum.photos/seed/nvidia-robotaxi-uber-partnership/1200/630
+image: /images/blog/nvidia.svg
 ---
 
 ## Two Giants, One Self-Driving Bet

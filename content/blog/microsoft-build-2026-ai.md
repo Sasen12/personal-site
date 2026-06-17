@@ -2,7 +2,7 @@
 title: "Microsoft Build 2026: Copilot Everywhere, But Is That a Good Thing?"
 date: 2026-06-03
 tags: ["microsoft", "ai", "build", "copilot", "developer"]
-image: https://picsum.photos/seed/microsoft-build-2026-ai/1200/630
+image: /images/blog/tech.svg
 ---
 
 ## My Takeaway From This Year's Build

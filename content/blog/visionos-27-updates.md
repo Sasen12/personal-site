@@ -2,7 +2,7 @@
 title: "visionOS 27: Apple Vision Pro Is Finding Its Groove"
 date: 2026-06-12
 tags: ["Apple", "visionOS", "Vision Pro", "WWDC"]
-image: https://picsum.photos/seed/visionos-27-updates/1200/630
+image: /images/blog/apple.svg
 ---
 
 I'll start with a confession: I bought the original Vision Pro, used it intensely for three weeks, and then it spent six months gathering dust on my desk. The hardware was incredible. The software felt like a series of tech demos masquerading as an OS. visionOS 27 feels like the first release that understands what this device should actually be.

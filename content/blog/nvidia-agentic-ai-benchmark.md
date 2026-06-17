@@ -2,7 +2,7 @@
 title: "AgentPerf: NVIDIA Just Set the Benchmark for Agentic AI"
 date: 2026-04-08
 tags: ["NVIDIA", "AI", "Hardware", "Benchmarks"]
-image: https://picsum.photos/seed/nvidia-agentic-ai-benchmark/1200/630
+image: /images/blog/nvidia.svg
 ---
 
 ## Benchmarking the Unbenchmarkable

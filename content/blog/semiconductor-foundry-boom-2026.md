@@ -2,7 +2,7 @@
 title: "Foundries Are Printing Money (And AI HPC Is Why)"
 date: 2026-05-28
 tags: ["semiconductors", "foundry", "ai", "hpc", "industry"]
-image: https://picsum.photos/seed/semiconductor-foundry-boom-2026/1200/630
+image: /images/blog/tech.svg
 ---
 
 ## Top 10 Foundries Grew 3.7% QoQ — And That's Actually a Big Deal

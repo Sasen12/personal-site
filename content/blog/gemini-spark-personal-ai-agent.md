@@ -2,7 +2,7 @@
 title: "Gemini Spark: A 24/7 AI Agent That Actually Feels Personal"
 date: 2026-05-22
 tags: ["Google", "AI", "Gemini"]
-image: https://picsum.photos/seed/gemini-spark-personal-ai-agent/1200/630
+image: /images/blog/google.svg
 ---
 
 Google dropped Gemini Spark at I/O and I've been thinking about it all week. A persistent, always-on AI agent that lives in your Google account, remembers everything, and can act on your behalf 24/7. No, it's not just a rebranded Assistant.

@@ -2,7 +2,7 @@
 title: "Samsung Semiconductor Just Posted Record Profit — AI Isn't Slowing Down"
 date: 2026-01-15
 tags: ["Samsung", "Semiconductors", "AI", "Business"]
-image: https://picsum.photos/seed/samsung-ai-chip-boom-record-profit/1200/630
+image: /images/blog/samsung.svg
 ---
 
 Samsung's semiconductor division just reported its highest quarterly profit ever: **$14.2 billion**. That's more than double the same quarter last year. If you're still wondering whether the AI boom is real, these numbers should settle it.

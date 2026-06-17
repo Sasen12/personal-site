@@ -2,7 +2,7 @@
 title: "RTX Spark: NVIDIA's Desktop AI Appliance Is Here"
 date: 2026-06-04
 tags: ["NVIDIA", "AI", "Hardware", "GPUs", "Computex"]
-image: https://picsum.photos/seed/nvidia-rtx-spark-computex/1200/630
+image: /images/blog/nvidia.svg
 ---
 
 ## Finally, an AI Workstation That Doesn't Sound Like a Jet Engine

@@ -2,7 +2,7 @@
 title: "HPE and NVIDIA: The AI Factory Blueprint"
 date: 2026-05-10
 tags: ["NVIDIA", "AI", "Enterprise", "Hardware"]
-image: https://picsum.photos/seed/nvidia-hpe-ai-factory/1200/630
+image: /images/blog/nvidia.svg
 ---
 
 ## Agents Need Factories

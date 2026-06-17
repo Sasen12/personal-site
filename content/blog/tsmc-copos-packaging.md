@@ -2,7 +2,7 @@
 title: "CoPoS Packaging: TSMC's Next Move That Nobody's Talking About (But Should Be)"
 date: 2026-06-02
 tags: ["tsmc", "semiconductors", "packaging", "advanced-packaging", "chiplets"]
-image: https://picsum.photos/seed/tsmc-copos-packaging/1200/630
+image: /images/blog/tech.svg
 ---
 
 ## Chip-on-Panel-on-Substrate — The Acronym Is Ugly, The Tech Is Beautiful

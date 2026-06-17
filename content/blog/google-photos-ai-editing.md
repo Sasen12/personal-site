@@ -2,7 +2,7 @@
 title: "Talking to Google Photos to Edit Pictures Feels Like Magic"
 date: 2026-06-17
 tags: ["Google", "AI", "Gemini"]
-image: https://picsum.photos/seed/google-photos-ai-editing/1200/630
+image: /images/blog/google.svg
 ---
 
 Conversational AI editing in Google Photos has started rolling out internationally, and I've been using it for two weeks through a VPN workaround. Now that it's officially here, I can share my thoughts.

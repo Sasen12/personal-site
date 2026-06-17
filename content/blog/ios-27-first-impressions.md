@@ -2,7 +2,7 @@
 title: "iOS 27: The Point Where AI Stops Feeling Like a Gimmick"
 date: 2026-06-10
 tags: ["Apple", "iOS", "AI", "Apple Intelligence"]
-image: https://picsum.photos/seed/ios-27-first-impressions/1200/630
+image: /images/blog/apple.svg
 ---
 
 I've been running the iOS 27 beta since Monday. Here's the thing nobody's talking about — it's not the flashy AI features that make this release. It's the fact that Apple Intelligence has stopped feeling like a separate thing you opt into and started feeling like iOS itself.

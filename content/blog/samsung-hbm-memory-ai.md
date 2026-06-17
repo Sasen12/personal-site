@@ -2,7 +2,7 @@
 title: "The Unsung Hero of the AI Boom: Samsung's HBM Memory"
 date: 2026-04-28
 tags: ["Samsung", "Semiconductors", "AI", "Hardware"]
-image: https://picsum.photos/seed/samsung-hbm-memory-ai/1200/630
+image: /images/blog/samsung.svg
 ---
 
 Everybody talks about NVIDIA GPUs when they talk about AI. But nobody talks about the memory that makes those GPUs actually useful. Samsung's HBM (High Bandwidth Memory) is the unsung hero of the AI revolution, and they just announced HBM4 production is ahead of schedule.

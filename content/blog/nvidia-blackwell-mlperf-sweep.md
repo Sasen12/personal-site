@@ -2,7 +2,7 @@
 title: "Blackwell Absolutely Wrecks MLPerf Training 6.0"
 date: 2026-04-22
 tags: ["NVIDIA", "AI", "Hardware", "GPUs"]
-image: https://picsum.photos/seed/nvidia-blackwell-mlperf-sweep/1200/630
+image: /images/blog/nvidia.svg
 ---
 
 ## Spoiler: NVIDIA Won. Again.

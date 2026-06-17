@@ -2,7 +2,7 @@
 title: "Apple + Google AI: Pragmatic Partnership or Identity Crisis?"
 date: 2026-06-17
 tags: ["Apple", "AI", "Google", "Partnership"]
-image: https://picsum.photos/seed/apple-google-ai-partnership/1200/630
+image: /images/blog/apple.svg
 ---
 
 The report landed yesterday: Apple is in late-stage talks with Google to license Gemini as the backend for complex Apple Intelligence queries that exceed what on-device models can handle. My immediate reaction was visceral disappointment. After all the talk about privacy-first AI and on-device intelligence, Apple might just white-label Google's models?

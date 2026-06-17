@@ -2,7 +2,7 @@
 title: "Play Store AI Summaries Are Helpful, But I Don't Trust Them Yet"
 date: 2026-06-10
 tags: ["Android", "AI", "Privacy", "Google Play"]
-image: https://picsum.photos/seed/google-play-store-ai-app-summaries/1200/630
+image: /images/blog/google.svg
 ---
 
 Google Play Store now shows AI-generated summaries of apps and aggregated review sentiment at the top of every listing. I've been testing this for a few weeks, and my feelings are genuinely mixed.

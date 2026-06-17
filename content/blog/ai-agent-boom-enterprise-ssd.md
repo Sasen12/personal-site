@@ -2,7 +2,7 @@
 title: "AI Agents Are Hungry — and Enterprise SSDs Are Paying the Price"
 date: 2026-06-10
 tags: ["ai", "storage", "enterprise", "hardware"]
-image: https://picsum.photos/seed/ai-agent-boom-enterprise-ssd/1200/630
+image: /images/blog/tech.svg
 ---
 
 ## $18.46B — That's What AI Agents Eat For Breakfast

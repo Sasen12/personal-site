@@ -2,7 +2,7 @@
 title: "NVIDIA Halos OS: Safety Built In, Not Bolted On — And Why That Actually Matters"
 date: 2026-06-05
 tags: ["nvidia", "autonomous-vehicles", "robotaxi", "safety"]
-image: https://picsum.photos/seed/robotaxi-safety-nvidia-halos/1200/630
+image: /images/blog/nvidia.svg
 ---
 
 ## Finally, Someone's Taking Robotaxi Safety Seriously From Day One

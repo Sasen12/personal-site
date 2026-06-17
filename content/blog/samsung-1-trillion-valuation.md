@@ -2,7 +2,7 @@
 title: "Samsung Just Hit $1 Trillion — and It's Not Because of Phones"
 date: 2026-03-18
 tags: ["Samsung", "Semiconductors", "AI", "Business"]
-image: https://picsum.photos/seed/samsung-1-trillion-valuation/1200/630
+image: /images/blog/samsung.svg
 ---
 
 Samsung crossed the $1 trillion market cap mark this week. Let that sink in. A trillion dollars. And the crazy part? It's not the Galaxy lineup driving this. It's the chip division.

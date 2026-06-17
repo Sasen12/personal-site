@@ -2,7 +2,7 @@
 title: "Googlebooks with Aluminium OS — Chromebooks Finally Grow Up"
 date: 2026-06-01
 tags: ["Google", "Hardware", "Android"]
-image: https://picsum.photos/seed/googlebooks-replacing-chromebooks/1200/630
+image: /images/blog/google.svg
 ---
 
 Google killed the Chromebook brand and replaced it with **Googlebooks** running **Aluminium OS**. And honestly? It's about damn time.

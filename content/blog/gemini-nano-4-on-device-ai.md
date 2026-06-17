@@ -2,7 +2,7 @@
 title: "Gemini Nano 4: 3x Faster and Running on My Pixel Right Now"
 date: 2026-05-25
 tags: ["Google", "AI", "Android", "Gemini"]
-image: https://picsum.photos/seed/gemini-nano-4-on-device-ai/1200/630
+image: /images/blog/google.svg
 ---
 
 As a developer who's been building with on-device ML since the first TensorFlow Lite days, Gemini Nano 4's announcement at I/O hit different. A 3x speed boost over Nano 3, running entirely on-device with a 2.5B parameter model. Let's talk about what that means.

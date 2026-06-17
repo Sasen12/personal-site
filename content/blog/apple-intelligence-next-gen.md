@@ -2,7 +2,7 @@
 title: "Next-Gen Apple Intelligence: Why Privacy-First AI Actually Wins"
 date: 2026-06-08
 tags: ["Apple", "AI", "Apple Intelligence", "Privacy"]
-image: https://picsum.photos/seed/apple-intelligence-next-gen/1200/630
+image: /images/blog/apple.svg
 ---
 
 Everyone keeps asking me: "Does Apple Intelligence actually compete with ChatGPT?" After spending a week with the next-gen architecture they announced at WWDC, my answer is: you're asking the wrong question.
