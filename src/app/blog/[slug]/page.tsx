@@ -6,6 +6,11 @@ import { getAdminPost } from "@/lib/admin-storage"
 import AnimatedSection from "@/components/AnimatedSection"
 import ReadingProgress from "@/components/ReadingProgress"
 import CopyCode from "@/components/CopyCode"
+import Breadcrumbs from "@/components/Breadcrumbs"
+import SeriesNav from "@/components/SeriesNav"
+import PostNavigation from "@/components/PostNavigation"
+import ShareButtons from "@/components/ShareButtons"
+import FontSizeAdjuster from "@/components/FontSizeAdjuster"
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }))
@@ -56,23 +61,41 @@ export default async function BlogPost({
   if (!post) notFound()
 
   const allPosts = getAllPosts()
+  const currentIndex = allPosts.findIndex((p) => p.slug === slug)
+  const prev = currentIndex > 0 ? allPosts[currentIndex + 1] : null
+  const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex - 1] : null
+
   const related = allPosts
     .filter((p) => p.slug !== slug && p.tags.some((t) => post!.tags.includes(t)))
     .slice(0, 2)
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    datePublished: post.date,
+    author: { "@type": "Person", name: "Sasen" },
+  }
 
   return (
     <>
       <ReadingProgress />
       <CopyCode />
-      <article className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <article className="mx-auto max-w-3xl px-6 py-16 sm:py-24" id="main-content">
         <AnimatedSection>
-          <nav className="mb-8 flex items-center gap-2 text-xs text-gray-500 dark:text-slate-500">
-            <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">Home</Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-indigo-600 dark:hover:text-indigo-400">Blog</Link>
-            <span>/</span>
-            <span className="text-gray-800 dark:text-slate-300">{post.title}</span>
-          </nav>
+          <Breadcrumbs items={[
+            { label: "Blog", href: "/blog" },
+            { label: post.title },
+          ]} />
+
+          <div className="mb-4 flex items-center justify-between">
+            <SeriesNav post={post} allPosts={allPosts} />
+            <FontSizeAdjuster />
+          </div>
 
           <header className="mb-8">
             <div className="mb-2 flex items-center gap-3 text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
@@ -85,6 +108,12 @@ export default async function BlogPost({
               </span>
               <span className="text-gray-300 dark:text-slate-600">&middot;</span>
               <span>{post.readingTime}</span>
+              {post.wordCount && (
+                <>
+                  <span className="text-gray-300 dark:text-slate-600">&middot;</span>
+                  <span>{post.wordCount.toLocaleString()} words</span>
+                </>
+              )}
             </div>
             <h1 className="mb-3 text-3xl font-bold sm:text-4xl">{post.title}</h1>
             {post.tags && post.tags.length > 0 && (
@@ -92,7 +121,7 @@ export default async function BlogPost({
                 {post.tags.map((tag) => (
                   <a
                     key={tag}
-                    href={`/blog?tag=${encodeURIComponent(tag)}`}
+                    href={`/blog/tags/${encodeURIComponent(tag)}`}
                     className="rounded-md bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-400"
                   >
                     {tag}
@@ -113,14 +142,29 @@ export default async function BlogPost({
           )}
 
           <div
-            className="prose prose-gray max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-indigo-600 dark:prose-a:text-indigo-400"
+            className="prose prose-gray max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-img:cursor-zoom-in"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          <div className="mt-8 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-slate-700">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">
+                S
+              </div>
+              <div>
+                <p className="text-sm font-medium">Sasen</p>
+                <p className="text-xs text-gray-500 dark:text-slate-500">Writer &amp; developer</p>
+              </div>
+            </div>
+            <ShareButtons title={post.title} url={`/blog/${slug}`} />
+          </div>
         </AnimatedSection>
+
+        <PostNavigation prev={prev} next={next} />
 
         {related.length > 0 && (
           <AnimatedSection delay={0.2}>
-            <div className="mt-16 border-t border-gray-200 pt-8 dark:border-slate-700">
+            <div className="mt-12 border-t border-gray-200 pt-8 dark:border-slate-700">
               <h2 className="mb-4 text-lg font-semibold">Related Posts</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {related.map((p) => (

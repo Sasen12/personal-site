@@ -15,12 +15,19 @@ export interface Post {
   tags: string[]
   readingTime: string
   image?: string
+  series?: string
+  seriesIndex?: number
+  wordCount?: number
 }
 
 function estimateReadingTime(text: string): string {
   const words = text.trim().split(/\s+/).length
   const minutes = Math.max(1, Math.round(words / 200))
   return `${minutes} min read`
+}
+
+function countWords(text: string): number {
+  return text.trim().split(/\s+/).length
 }
 
 export function getAllPosts(): Post[] {
@@ -51,6 +58,9 @@ export function getAllPosts(): Post[] {
         tags: data.tags || [],
         readingTime: estimateReadingTime(content),
         image: data.image || undefined,
+        series: data.series || undefined,
+        seriesIndex: data.seriesIndex || undefined,
+        wordCount: countWords(content),
       }
     })
 
@@ -75,5 +85,8 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     tags: data.tags || [],
     readingTime: estimateReadingTime(content),
     image: data.image || undefined,
+    series: data.series || undefined,
+    seriesIndex: data.seriesIndex || undefined,
+    wordCount: countWords(content),
   }
 }
