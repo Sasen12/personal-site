@@ -135,6 +135,36 @@ article img {
   @apply rounded-lg;
 }
 
+article .table-wrapper {
+  @apply mb-4 overflow-x-auto;
+}
+
+article .table-wrapper table {
+  @apply min-w-full text-sm;
+}
+
+article .table-wrapper th,
+article .table-wrapper td {
+  @apply border border-gray-200 px-3 py-2 dark:border-slate-700;
+}
+
+article .table-wrapper th {
+  @apply bg-gray-50 font-semibold dark:bg-slate-800;
+}
+
+article .iframe-wrapper {
+  @apply relative mb-4 overflow-hidden rounded-lg;
+  padding-bottom: 56.25%;
+}
+
+article .iframe-wrapper iframe {
+  @apply absolute left-0 top-0 h-full w-full;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @media print {
   nav, footer, .no-print {
     display: none !important;

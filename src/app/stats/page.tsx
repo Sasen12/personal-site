@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import AnimatedSection from "@/components/AnimatedSection"
 import { getAllPosts } from "@/lib/posts"
+import { projects } from "@/data/projects"
 
 export const metadata: Metadata = {
   title: "Stats — Sasen",
@@ -36,9 +37,9 @@ export default function StatsPage() {
         <div className="mb-10 grid gap-4 sm:grid-cols-4">
           {[
             { label: "Blog Posts", value: posts.length },
+            { label: "Projects", value: projects.length },
             { label: "Tags", value: tagCounts.size },
             { label: "Total Words", value: totalWords.toLocaleString() },
-            { label: "Months Active", value: monthly.size },
           ].map((s) => (
             <div key={s.label} className="rounded-lg border border-gray-200 p-4 text-center dark:border-slate-700">
               <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{s.value}</div>

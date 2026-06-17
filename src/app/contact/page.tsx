@@ -6,6 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection"
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState(false)
+  const [charCount, setCharCount] = useState(0)
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -89,8 +90,11 @@ export default function Contact() {
                 name="message"
                 rows={5}
                 required
+                maxLength={2000}
+                onChange={(e) => setCharCount(e.target.value.length)}
                 className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
               />
+              <p className="mt-1 text-right text-xs text-gray-400">{charCount}/2000</p>
             </div>
 
             {error && (

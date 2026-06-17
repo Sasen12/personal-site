@@ -11,6 +11,7 @@ import SeriesNav from "@/components/SeriesNav"
 import PostNavigation from "@/components/PostNavigation"
 import ShareButtons from "@/components/ShareButtons"
 import FontSizeAdjuster from "@/components/FontSizeAdjuster"
+import HeadingAnchors from "@/components/HeadingAnchors"
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }))
@@ -81,6 +82,7 @@ export default async function BlogPost({
     <>
       <ReadingProgress />
       <CopyCode />
+      <HeadingAnchors />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
