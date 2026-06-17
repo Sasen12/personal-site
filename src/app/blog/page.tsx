@@ -82,13 +82,30 @@ export default async function Blog({
       )}
 
       {allPosts.length > 0 ? (
-        <div className="grid gap-6 sm:grid-cols-2">
-          {allPosts.map((post, i) => (
-            <AnimatedCard key={post.slug} index={i}>
-              <BlogCard post={post} />
-            </AnimatedCard>
-          ))}
-        </div>
+        <>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {allPosts.map((post, i) => (
+              <AnimatedCard key={post.slug} index={i}>
+                <BlogCard post={post} />
+              </AnimatedCard>
+            ))}
+          </div>
+          <AnimatedSection delay={0.1}>
+            <nav className="mt-10 flex items-center justify-between text-sm">
+              <span className="text-gray-500 dark:text-slate-500">
+                {allPosts.length} post{allPosts.length !== 1 ? "s" : ""}
+              </span>
+              <div className="flex gap-4">
+                <a
+                  href="/blog/archive"
+                  className="font-medium text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300"
+                >
+                  View archive &rarr;
+                </a>
+              </div>
+            </nav>
+          </AnimatedSection>
+        </>
       ) : (
         <div className="rounded-xl border border-dashed border-gray-300 p-16 text-center dark:border-slate-600">
           <p className="text-gray-500">No posts found for this tag.</p>

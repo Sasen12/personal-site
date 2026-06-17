@@ -5,6 +5,8 @@ const socials = [
   { label: "GitHub", href: "https://github.com/Sasen12", icon: GitHubIcon },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sasen-perera-8b8a13337", icon: LinkedInIcon },
   { label: "Email", href: "mailto:techsavvy356@gmail.com", icon: EmailIcon },
+  { label: "Mastodon", href: "https://mastodon.social/@sasen", icon: GitHubIcon },
+  { label: "Twitter / X", href: "https://x.com/sasen_dev", icon: GitHubIcon },
 ]
 
 const links = [

@@ -9,7 +9,9 @@ import { getAllPosts } from "@/lib/posts"
 
 export default function Home() {
   const featuredProjects = projects.filter((_, i) => i < 4)
-  const recentPosts = getAllPosts().slice(0, 2)
+  const allPosts = getAllPosts()
+  const recentPosts = allPosts.slice(0, 2)
+  const featuredPost = allPosts.length > 0 ? allPosts[0] : null
 
   return (
     <div>
@@ -120,6 +122,37 @@ export default function Home() {
             </div>
           </section>
         </AnimatedSection>
+
+        {featuredPost && (
+          <AnimatedSection delay={0.1}>
+            <section className="mb-16">
+              <div className="mb-6 flex items-center gap-3">
+                <h2 className="text-2xl font-bold sm:text-3xl">Featured Post</h2>
+                <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-700 dark:bg-amber-900/40 dark:text-amber-400">
+                  Featured
+                </span>
+              </div>
+              <Link
+                href={`/blog/${featuredPost.slug}`}
+                className="group block rounded-xl border border-gray-200 bg-gradient-to-r from-indigo-50/50 to-transparent p-6 transition-all hover:border-indigo-200 hover:shadow-lg dark:border-slate-700 dark:from-indigo-950/20 dark:hover:border-indigo-800"
+              >
+                <p className="text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                  {new Date(featuredPost.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })} &middot; {featuredPost.readingTime}
+                </p>
+                <h3 className="mt-2 text-xl font-semibold group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
+                  {featuredPost.title}
+                </h3>
+                <p className="mt-2 text-sm text-gray-600 dark:text-slate-400">
+                  {featuredPost.excerpt}
+                </p>
+              </Link>
+            </section>
+          </AnimatedSection>
+        )}
 
         <AnimatedSection delay={0.15}>
           <section>

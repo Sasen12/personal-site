@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import fs from "fs"
 import path from "path"
 import Link from "next/link"
@@ -6,6 +7,11 @@ import AnimatedCard from "@/components/AnimatedCard"
 import Timeline from "@/components/Timeline"
 import { experiences } from "@/data/experience"
 import { skills } from "@/data/skills"
+
+export const metadata: Metadata = {
+  title: "Resume — Sasen",
+  description: "Experience, education, and skills. Full-stack developer, Unity tinkerer, and video editor.",
+}
 
 export default function Resume() {
   const categories = [...new Set(skills.map((s) => s.category))]

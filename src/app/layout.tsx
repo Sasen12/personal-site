@@ -30,6 +30,16 @@ export const metadata: Metadata = {
     siteName: "Sasen",
     type: "website",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
+  icons: {
+    other: [
+      { rel: "me", url: "https://mastodon.social/@sasen" },
+    ],
+  },
 }
 
 export default function RootLayout({

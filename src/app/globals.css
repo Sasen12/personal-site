@@ -165,6 +165,12 @@ html {
   scroll-behavior: smooth;
 }
 
+article a[href^="http"]:not([href*="sasen.dev"]):not([href*="sasen.tech"])::after {
+  content: " \u2197";
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
 @media print {
   nav, footer, .no-print {
     display: none !important;
