@@ -10,9 +10,9 @@ const categories = [
   {
     title: "Hardware",
     items: [
-      { name: "MacBook Pro 16\" (M1 Pro, 2021)", desc: "Daily driver for development, design, and everything in between." },
+      { name: "MacBook Pro M5", desc: "Daily driver for development, design, and everything in between." },
       { name: "Custom PC (Ryzen 9 + RTX 4070)", desc: "Gaming, Unity development, and GPU-intensive workloads." },
-      { name: "Pixel 9 Pro", desc: "My daily driver phone running Android 16/17." },
+      { name: "Samsung Galaxy S25 Ultra", desc: "My daily driver phone." },
       { name: "AirPods Pro (2nd gen)", desc: "Noise cancellation for deep focus sessions." },
       { name: "Keychron K2 (Brown switches)", desc: "Mechanical keyboard for that satisfying clack." },
       { name: "Logitech MX Master 3S", desc: "Ergonomic mouse with the best scroll wheel." },
