@@ -13,26 +13,17 @@ export default function AnimatedCard({ children, className, index = 0 }: Props) 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-40px" })
 
-  const xOffset = index % 2 === 0 ? -80 : 80
-  const rotateAmount = index % 2 === 0 ? -3 : 3
-
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: xOffset, y: 80, scale: 0.4, rotate: rotateAmount }}
-      animate={
-        isInView
-          ? { opacity: 1, x: 0, y: 0, scale: 1, rotate: 0 }
-          : { opacity: 0, x: xOffset, y: 80, scale: 0.4, rotate: rotateAmount }
-      }
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{
-        type: "spring",
-        stiffness: 140,
-        damping: 13,
-        mass: 0.8,
-        delay: index * 0.08,
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1],
+        delay: index * 0.06,
       }}
-      whileHover={{ scale: 1.04, rotate: index % 3 === 0 ? 1.5 : -1.5, transition: { type: "spring", stiffness: 300 } }}
+      whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
       className={className}
     >
       {children}

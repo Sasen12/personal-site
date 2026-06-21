@@ -16,17 +16,11 @@ export default function AnimatedSection({ children, className, delay = 0 }: Prop
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 120, scale: 0.5, rotate: -4, filter: "blur(8px)" }}
-      animate={
-        isInView
-          ? { opacity: 1, y: 0, scale: 1, rotate: 0, filter: "blur(0px)" }
-          : { opacity: 0, y: 120, scale: 0.5, rotate: -4, filter: "blur(8px)" }
-      }
+      initial={{ opacity: 0, y: 24 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{
-        type: "spring",
-        stiffness: 120,
-        damping: 14,
-        mass: 0.9,
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
         delay,
       }}
       className={className}

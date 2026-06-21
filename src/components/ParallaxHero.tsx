@@ -10,9 +10,8 @@ export default function ParallaxHero({ children }: { children: React.ReactNode }
     offset: ["start start", "end start"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "60%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25])
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
 
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const [isDark, setIsDark] = useState(false)
@@ -46,9 +45,9 @@ export default function ParallaxHero({ children }: { children: React.ReactNode }
         <div className="absolute inset-0 hidden bg-gradient-to-b from-slate-950 via-slate-900 to-indigo-950 dark:block" />
 
         <motion.div
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.35 }}
-          transition={{ duration: 2.5, ease: [0.1, 0.7, 0.2, 1] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.3 }}
+          transition={{ duration: 1.5, ease: "ease-out" }}
           className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat dark:block"
           style={{ backgroundImage: "url(/images/tech/workspace.jpg)" }}
         />
@@ -56,39 +55,39 @@ export default function ParallaxHero({ children }: { children: React.ReactNode }
         <div className="absolute inset-0 hidden bg-gradient-to-t from-slate-950 via-slate-900/60 to-indigo-950/80 dark:block" />
 
         <motion.div
-          initial={{ scale: 2, opacity: 0, rotate: -20 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 1.8, ease: [0.1, 0.8, 0.2, 1] }}
-          className="absolute right-0 top-0 h-[600px] w-[600px] animate-float-1 rounded-full blur-3xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: "ease-out" }}
+          className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full blur-3xl"
           style={{
             background: isDark
               ? "radial-gradient(circle, rgba(99,102,241,0.18), transparent 70%)"
               : "radial-gradient(circle, rgba(99,102,241,0.05), transparent 70%)",
-            transform: `translate(${mouse.x * 20}px, ${mouse.y * 20}px)`,
+            transform: `translate(${mouse.x * 8}px, ${mouse.y * 8}px)`,
           }}
         />
         <motion.div
-          initial={{ scale: 2, opacity: 0, rotate: 20 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 2, ease: [0.1, 0.8, 0.2, 1], delay: 0.15 }}
-          className="absolute bottom-0 left-0 h-[500px] w-[500px] animate-float-2 rounded-full blur-3xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: "ease-out", delay: 0.15 }}
+          className="absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full blur-3xl"
           style={{
             background: isDark
               ? "radial-gradient(circle, rgba(168,85,247,0.12), transparent 70%)"
               : "radial-gradient(circle, rgba(168,85,247,0.04), transparent 70%)",
-            transform: `translate(${mouse.x * -15}px, ${mouse.y * -15}px)`,
+            transform: `translate(${mouse.x * -6}px, ${mouse.y * -6}px)`,
           }}
         />
         <motion.div
-          initial={{ scale: 2, opacity: 0, rotate: -30 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 2.2, ease: [0.1, 0.8, 0.2, 1], delay: 0.3 }}
-          className="absolute top-1/2 left-1/3 h-[400px] w-[400px] animate-float-3 rounded-full blur-3xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: "ease-out", delay: 0.3 }}
+          className="absolute top-1/2 left-1/3 h-[400px] w-[400px] rounded-full blur-3xl"
           style={{
             background: isDark
               ? "radial-gradient(circle, rgba(59,130,246,0.1), transparent 70%)"
               : "radial-gradient(circle, rgba(59,130,246,0.03), transparent 70%)",
-            transform: `translate(${mouse.x * 25}px, ${mouse.y * -25}px)`,
+            transform: `translate(${mouse.x * 10}px, ${mouse.y * -10}px)`,
           }}
         />
 
