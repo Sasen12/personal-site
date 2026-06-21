@@ -24,24 +24,24 @@ export default async function TagPage({ params }: { params: Promise<{ tag: strin
   return (
     <main className="mx-auto max-w-4xl px-6 py-16 sm:py-24">
       <AnimatedSection>
-        <nav className="mb-6 text-xs text-gray-500 dark:text-slate-500">
-          <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400">Home</Link>
+        <nav className="mb-6 text-xs text-gray-500">
+          <Link href="/" className="hover:text-purple-400">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/blog" className="hover:text-indigo-600 dark:hover:text-indigo-400">Blog</Link>
+          <Link href="/blog" className="hover:text-purple-400">Blog</Link>
           <span className="mx-2">/</span>
-          <Link href="/blog/tags" className="hover:text-indigo-600 dark:hover:text-indigo-400">Tags</Link>
+          <Link href="/blog/tags" className="hover:text-purple-400">Tags</Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-800 dark:text-slate-300">{tag}</span>
+          <span className="text-gray-300">{tag}</span>
         </nav>
-        <h1 className="mb-2 text-3xl font-bold sm:text-4xl">
-          Posts tagged with <span className="text-indigo-600 dark:text-indigo-400">#{tag}</span>
+        <h1 className="gradient-text mb-2 text-3xl font-bold sm:text-4xl">
+          Posts tagged with <span className="text-purple-400">#{tag}</span>
         </h1>
-        <p className="mb-8 text-gray-600 dark:text-slate-400">{posts.length} post{posts.length !== 1 && "s"}</p>
+        <p className="mb-8 text-gray-400">{posts.length} post{posts.length !== 1 && "s"}</p>
       </AnimatedSection>
 
       <div className="grid gap-6 sm:grid-cols-2">
-        {posts.map((post, i) => (
-          <AnimatedSection key={post.slug} delay={i * 0.05}>
+        {posts.map((post) => (
+          <AnimatedSection key={post.slug}>
             <BlogCard post={post} />
           </AnimatedSection>
         ))}

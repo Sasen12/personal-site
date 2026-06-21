@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <meta name="theme-color" content="#6366f1" />
+        <meta name="theme-color" content="#7c3aed" />
         <link rel="me" href="https://mastodon.social/@sasen" />
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -67,13 +67,13 @@ export default function RootLayout({
           __html: `
             console.log(
               "%c\u{1F680} Sasen.dev %cBuilt with Next.js, Tailwind CSS, and love.",
-              "font-size:20px; font-weight:bold; color:#6366f1;",
+              "font-size:20px; font-weight:bold; color:#8b5cf6;",
               "font-size:14px;"
             );
           `
         }} />
       </head>
-      <body className="min-h-screen flex flex-col bg-white text-gray-900 dark:bg-slate-900 dark:text-slate-100">
+      <body className="min-h-screen flex flex-col bg-[#030303] text-gray-100">
         <SkipToContent />
         <AnnouncementBanner />
         <Navbar />

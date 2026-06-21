@@ -8,6 +8,12 @@ import CommunityAnimation from "@/components/CommunityAnimation"
 
 const TYPES = ["question", "debate", "discussion"] as const
 
+const typeBtnColors: Record<string, string> = {
+  question: "data-[active=true]:bg-emerald-600 data-[active=true]:text-white",
+  debate: "data-[active=true]:bg-amber-600 data-[active=true]:text-white",
+  discussion: "data-[active=true]:bg-purple-600 data-[active=true]:text-white",
+}
+
 export default function NewThread() {
   const { username, loading: authLoading } = useCommunityAuth()
   const router = useRouter()
@@ -56,26 +62,27 @@ export default function NewThread() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <CommunityAnimation>
-        <h1 className="mb-2 text-3xl font-bold sm:text-4xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        <h1 className="gradient-text mb-2 text-3xl font-bold sm:text-4xl">
           New Thread
         </h1>
-        <p className="mb-8 text-gray-600 dark:text-slate-400">Start a tech discussion. Must be tech-related.</p>
+        <p className="mb-8 text-gray-400">Start a tech discussion. Must be tech-related.</p>
       </CommunityAnimation>
 
-      <CommunityAnimation delay={0.1}>
+      <CommunityAnimation>
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="mb-1 block text-sm font-medium">Type</label>
+            <label className="mb-1 block text-sm font-medium text-gray-300">Type</label>
             <div className="flex gap-2">
               {TYPES.map((t) => (
                 <button
                   key={t}
                   type="button"
                   onClick={() => setType(t)}
-                  className={`rounded-lg px-4 py-2 text-sm font-medium capitalize transition-all ${
+                  data-active={type === t}
+                  className={`rounded-full px-4 py-2 text-sm font-medium capitalize transition-all ${
                     type === t
-                      ? "bg-indigo-600 text-white shadow-md"
-                      : "border border-gray-300 text-gray-600 hover:border-indigo-300 dark:border-slate-600 dark:text-slate-400"
+                      ? "bg-purple-600 text-white"
+                      : "glass text-gray-400 hover:text-gray-200"
                   }`}
                 >
                   {t}
@@ -85,42 +92,42 @@ export default function NewThread() {
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium">Title</label>
+            <label className="mb-1 block text-sm font-medium text-gray-300">Title</label>
             <input
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-              className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-800"
+              className="glass w-full rounded-lg px-4 py-2.5 text-sm outline-none transition focus:border-purple-500/50"
               placeholder="What's on your mind?"
             />
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium">Content</label>
+            <label className="mb-1 block text-sm font-medium text-gray-300">Content</label>
             <textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
               required
               rows={6}
-              className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-800"
+              className="glass w-full rounded-lg px-4 py-2.5 text-sm outline-none transition focus:border-purple-500/50"
               placeholder="Share your thoughts, question, or debate topic..."
             />
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-medium">Tags (comma-separated)</label>
+            <label className="mb-1 block text-sm font-medium text-gray-300">Tags (comma-separated)</label>
             <input
               type="text"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-800"
+              className="glass w-full rounded-lg px-4 py-2.5 text-sm outline-none transition focus:border-purple-500/50"
               placeholder="e.g. AI, privacy, mobile"
             />
           </div>
 
           {error && (
-            <div className="rounded-lg bg-red-50 p-4 text-sm text-red-600 dark:bg-red-900/30 dark:text-red-400">
+            <div className="rounded-lg bg-red-500/10 p-4 text-sm text-red-400">
               {error}
             </div>
           )}
@@ -129,13 +136,13 @@ export default function NewThread() {
             <button
               type="submit"
               disabled={loading}
-              className="rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-2.5 text-sm font-medium text-white transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
+              className="btn-primary"
             >
               {loading ? "Posting..." : "Post Thread"}
             </button>
             <Link
               href="/community"
-              className="text-sm text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400"
+              className="text-sm text-gray-500 hover:text-purple-400"
             >
               Cancel
             </Link>

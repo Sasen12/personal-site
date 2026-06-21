@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(true)
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains("dark"))
@@ -20,7 +20,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle dark mode"
-      className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-slate-800"
+      className="rounded-full p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-gray-200"
     >
       {dark ? (
         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>

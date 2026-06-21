@@ -100,7 +100,7 @@ export default async function BlogPost({
           </div>
 
           <header className="mb-8">
-            <div className="mb-2 flex items-center gap-3 text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+            <div className="mb-2 flex items-center gap-3 text-xs font-medium uppercase tracking-wider text-purple-400">
               <span>
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -108,23 +108,23 @@ export default async function BlogPost({
                   day: "numeric",
                 })}
               </span>
-              <span className="text-gray-300 dark:text-slate-600">&middot;</span>
+              <span className="text-gray-600">&middot;</span>
               <span>{post.readingTime}</span>
               {post.wordCount && (
                 <>
-                  <span className="text-gray-300 dark:text-slate-600">&middot;</span>
+                  <span className="text-gray-600">&middot;</span>
                   <span>{post.wordCount.toLocaleString()} words</span>
                 </>
               )}
             </div>
-            <h1 className="mb-3 text-3xl font-bold sm:text-4xl">{post.title}</h1>
+            <h1 className="gradient-text mb-3 text-3xl font-bold sm:text-4xl">{post.title}</h1>
             {post.tags && post.tags.length > 0 && (
               <div className="flex flex-wrap gap-1.5">
                 {post.tags.map((tag) => (
                   <a
                     key={tag}
                     href={`/blog/tags/${encodeURIComponent(tag)}`}
-                    className="rounded-md bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-900/30 dark:text-indigo-400"
+                    className="rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-300 hover:bg-purple-500/20"
                   >
                     {tag}
                   </a>
@@ -144,18 +144,18 @@ export default async function BlogPost({
           )}
 
           <div
-            className="prose prose-gray max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-img:cursor-zoom-in"
+            className="prose prose-gray max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-purple-400 prose-a:no-underline hover:prose-a:text-purple-300 prose-img:cursor-zoom-in"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          <div className="mt-8 flex items-center justify-between border-t border-gray-200 pt-6 dark:border-slate-700">
+          <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-300">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/20 text-sm font-semibold text-purple-300">
                 S
               </div>
               <div>
-                <p className="text-sm font-medium">Sasen</p>
-                <p className="text-xs text-gray-500 dark:text-slate-500">Writer &amp; developer</p>
+                <p className="text-sm font-medium text-gray-100">Sasen</p>
+                <p className="text-xs text-gray-500">Writer &amp; developer</p>
               </div>
             </div>
             <ShareButtons title={post.title} url={`/blog/${slug}`} />
@@ -165,20 +165,20 @@ export default async function BlogPost({
         <PostNavigation prev={prev} next={next} />
 
         {related.length > 0 && (
-          <AnimatedSection delay={0.2}>
-            <div className="mt-12 border-t border-gray-200 pt-8 dark:border-slate-700">
-              <h2 className="mb-4 text-lg font-semibold">Related Posts</h2>
+          <AnimatedSection>
+            <div className="mt-12 border-t border-white/10 pt-8">
+              <h2 className="mb-4 text-lg font-semibold text-gray-100">Related Posts</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 {related.map((p) => (
                   <Link
                     key={p.slug}
                     href={`/blog/${p.slug}`}
-                    className="rounded-xl border border-gray-200 p-4 transition-colors hover:border-indigo-200 dark:border-slate-700 dark:hover:border-indigo-800"
+                    className="glass-card rounded-xl p-4"
                   >
-                    <p className="text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                    <p className="text-xs font-medium uppercase tracking-wider text-purple-400">
                       {new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
                     </p>
-                    <p className="mt-1 text-sm font-semibold">{p.title}</p>
+                    <p className="mt-1 text-sm font-semibold text-gray-100">{p.title}</p>
                   </Link>
                 ))}
               </div>
@@ -186,11 +186,11 @@ export default async function BlogPost({
           </AnimatedSection>
         )}
 
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection>
           <div className="mt-8 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1 text-sm text-gray-600 transition-colors hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400"
+              className="btn-secondary inline-flex"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

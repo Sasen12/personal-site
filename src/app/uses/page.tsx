@@ -63,10 +63,10 @@ export default function UsesPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <AnimatedSection>
-        <h1 className="mb-2 text-3xl font-bold sm:text-4xl">/uses</h1>
-        <p className="mb-8 text-gray-600 dark:text-slate-400">
+        <h1 className="mb-2 text-3xl font-bold gradient-text inline-block sm:text-4xl">/uses</h1>
+        <p className="mb-8 text-gray-400">
           A living list of the hardware, software, and tools I use every day. Inspired by{" "}
-          <a href="https://uses.tech" className="text-indigo-600 hover:underline dark:text-indigo-400">uses.tech</a>.
+          <a href="https://uses.tech" className="text-purple-400 hover:underline">uses.tech</a>.
         </p>
       </AnimatedSection>
 
@@ -74,11 +74,11 @@ export default function UsesPage() {
         <AnimatedSection key={cat.title} delay={i * 0.05}>
           <section className="mb-10">
             <h2 className="mb-4 text-xl font-semibold">{cat.title}</h2>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {cat.items.map((item) => (
-                <div key={item.name} className="rounded-lg border border-gray-200 p-4 dark:border-slate-700">
-                  <h3 className="font-medium">{item.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">{item.desc}</p>
+                <div key={item.name} className="glass-card rounded-xl p-4">
+                  <h3 className="font-medium text-gray-100">{item.name}</h3>
+                  <p className="mt-1 text-sm text-gray-400">{item.desc}</p>
                 </div>
               ))}
             </div>

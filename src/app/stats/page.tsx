@@ -29,8 +29,8 @@ export default function StatsPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <AnimatedSection>
-        <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Stats</h1>
-        <p className="mb-8 text-gray-600 dark:text-slate-400">Numbers about this site and its content.</p>
+        <h1 className="mb-2 text-3xl font-bold gradient-text inline-block sm:text-4xl">Stats</h1>
+        <p className="mb-8 text-gray-400">Numbers about this site and its content.</p>
       </AnimatedSection>
 
       <AnimatedSection delay={0.05}>
@@ -41,9 +41,9 @@ export default function StatsPage() {
             { label: "Tags", value: tagCounts.size },
             { label: "Total Words", value: totalWords.toLocaleString() },
           ].map((s) => (
-            <div key={s.label} className="rounded-lg border border-gray-200 p-4 text-center dark:border-slate-700">
-              <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">{s.value}</div>
-              <div className="mt-1 text-xs text-gray-500 dark:text-slate-500">{s.label}</div>
+            <div key={s.label} className="glass-card rounded-xl p-4 text-center">
+              <div className="text-2xl font-bold gradient-text">{s.value}</div>
+              <div className="mt-1 text-xs text-gray-500">{s.label}</div>
             </div>
           ))}
         </div>
@@ -55,11 +55,11 @@ export default function StatsPage() {
           <div className="space-y-2">
             {sortedMonths.map(([month, count]) => (
               <div key={month} className="flex items-center gap-3">
-                <span className="w-20 text-sm text-gray-600 dark:text-slate-400">{month}</span>
-                <div className="flex-1 overflow-hidden rounded-full bg-gray-200 dark:bg-slate-700">
-                  <div className="h-2 rounded-full bg-indigo-500" style={{ width: `${(count / Math.max(...sortedMonths.map((m) => m[1]))) * 100}%` }} />
+                <span className="w-20 text-sm text-gray-400">{month}</span>
+                <div className="flex-1 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500" style={{ width: `${(count / Math.max(...sortedMonths.map((m) => m[1]))) * 100}%` }} />
                 </div>
-                <span className="text-sm text-gray-600 dark:text-slate-400">{count}</span>
+                <span className="text-sm text-gray-400">{count}</span>
               </div>
             ))}
           </div>
@@ -71,8 +71,8 @@ export default function StatsPage() {
           <h2 className="mb-3 text-xl font-semibold">Tag Frequency</h2>
           <div className="flex flex-wrap gap-2">
             {sortedTags.map(([tag, count]) => (
-              <span key={tag} className="rounded-full border border-gray-200 px-3 py-1 text-sm dark:border-slate-700">
-                {tag} <span className="text-indigo-600 dark:text-indigo-400">({count})</span>
+              <span key={tag} className="rounded-full glass-card px-3 py-1 text-sm">
+                {tag} <span className="text-purple-400">({count})</span>
               </span>
             ))}
           </div>

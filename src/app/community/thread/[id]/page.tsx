@@ -25,9 +25,9 @@ type Reply = {
 }
 
 const typeColors: Record<string, string> = {
-  question: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300",
-  debate: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
-  discussion: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300",
+  question: "bg-emerald-500/10 text-emerald-300",
+  debate: "bg-amber-500/10 text-amber-300",
+  discussion: "bg-blue-500/10 text-blue-300",
 }
 
 export default function ThreadPage({ params }: { params: Promise<{ id: string }> }) {
@@ -81,8 +81,8 @@ export default function ThreadPage({ params }: { params: Promise<{ id: string }>
   if (loading) {
     return (
       <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-        <div className="h-8 w-3/4 animate-pulse rounded bg-gray-200 dark:bg-slate-700" />
-        <div className="mt-4 h-32 animate-pulse rounded-xl bg-gray-100 dark:bg-slate-800" />
+        <div className="h-8 w-3/4 animate-pulse rounded bg-white/5" />
+        <div className="mt-4 h-32 animate-pulse rounded-xl bg-white/5" />
       </main>
     )
   }
@@ -90,8 +90,8 @@ export default function ThreadPage({ params }: { params: Promise<{ id: string }>
   if (notFound || !thread) {
     return (
       <main className="mx-auto max-w-3xl px-6 py-16 text-center sm:py-24">
-        <h1 className="text-2xl font-bold">Thread not found</h1>
-        <Link href="/community" className="mt-4 inline-block text-indigo-600 hover:underline dark:text-indigo-400">
+        <h1 className="text-2xl font-bold text-gray-100">Thread not found</h1>
+        <Link href="/community" className="mt-4 inline-block text-purple-400 hover:text-purple-300">
           Back to community
         </Link>
       </main>
@@ -101,7 +101,7 @@ export default function ThreadPage({ params }: { params: Promise<{ id: string }>
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <CommunityAnimation>
-        <Link href="/community" className="mb-4 inline-flex items-center gap-1 text-sm text-gray-500 hover:text-indigo-600 dark:hover:text-indigo-400">
+        <Link href="/community" className="mb-4 inline-flex items-center gap-1 text-sm text-gray-500 hover:text-purple-400">
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -109,51 +109,51 @@ export default function ThreadPage({ params }: { params: Promise<{ id: string }>
         </Link>
 
         <div className="mb-2 flex items-center gap-2">
-          <span className={`rounded px-2 py-0.5 text-xs font-medium ${typeColors[thread.type] || ""}`}>
+          <span className={`rounded-full px-3 py-0.5 text-xs font-medium ${typeColors[thread.type] || ""}`}>
             {thread.type}
           </span>
           {thread.tags.map((tag) => (
-            <span key={tag} className="rounded bg-gray-100 px-2 py-0.5 text-xs text-gray-500 dark:bg-slate-700 dark:text-slate-400">
+            <span key={tag} className="rounded-full bg-white/5 px-2.5 py-0.5 text-xs text-gray-500">
               {tag}
             </span>
           ))}
         </div>
 
-        <h1 className="text-2xl font-bold sm:text-3xl">{thread.title}</h1>
+        <h1 className="gradient-text text-2xl font-bold sm:text-3xl">{thread.title}</h1>
 
-        <div className="mt-1 flex items-center gap-3 text-sm text-gray-400">
+        <div className="mt-1 flex items-center gap-3 text-sm text-gray-500">
           <span>{thread.authorUsername}</span>
           <span>{new Date(thread.createdAt).toLocaleDateString()}</span>
         </div>
 
-        <div className="mt-6 whitespace-pre-wrap rounded-xl border border-gray-200 bg-white p-6 text-sm leading-relaxed dark:border-slate-700 dark:bg-slate-800/50">
+        <div className="glass-card mt-6 whitespace-pre-wrap rounded-xl p-6 text-sm leading-relaxed text-gray-300">
           {thread.content}
         </div>
       </CommunityAnimation>
 
       <div className="mt-10">
         <CommunityAnimation>
-          <h2 className="mb-4 text-lg font-semibold">
+          <h2 className="mb-4 text-lg font-semibold text-gray-100">
             Replies ({thread.replies.length})
           </h2>
         </CommunityAnimation>
 
         {thread.replies.length === 0 ? (
-          <CommunityAnimation delay={0.1}>
-            <p className="rounded-xl border-2 border-dashed border-gray-300 p-8 text-center text-sm text-gray-500 dark:border-slate-600 dark:text-slate-400">
+          <CommunityAnimation>
+            <p className="glass-card rounded-xl p-8 text-center text-sm text-gray-500">
               No replies yet. Be the first to respond.
             </p>
           </CommunityAnimation>
         ) : (
           <div className="space-y-3">
-            {thread.replies.map((r, i) => (
-              <CommunityAnimation key={r.id} index={i}>
-                <div className="rounded-xl border border-gray-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-800/30">
-                  <div className="mb-1 flex items-center gap-2 text-xs text-gray-400">
-                    <span className="font-medium text-gray-600 dark:text-slate-300">{r.authorUsername}</span>
+            {thread.replies.map((r) => (
+              <CommunityAnimation key={r.id}>
+                <div className="glass-card rounded-xl p-4">
+                  <div className="mb-1 flex items-center gap-2 text-xs text-gray-500">
+                    <span className="font-medium text-gray-300">{r.authorUsername}</span>
                     <span>{new Date(r.createdAt).toLocaleDateString()}</span>
                   </div>
-                  <p className="whitespace-pre-wrap text-sm">{r.content}</p>
+                  <p className="whitespace-pre-wrap text-sm text-gray-300">{r.content}</p>
                 </div>
               </CommunityAnimation>
             ))}
@@ -162,7 +162,7 @@ export default function ThreadPage({ params }: { params: Promise<{ id: string }>
       </div>
 
       {username ? (
-        <CommunityAnimation delay={0.2}>
+        <CommunityAnimation>
           <form onSubmit={handleReply} className="mt-8 space-y-3">
             <textarea
               value={reply}
@@ -170,24 +170,24 @@ export default function ThreadPage({ params }: { params: Promise<{ id: string }>
               placeholder="Write a reply..."
               rows={3}
               required
-              className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:border-slate-600 dark:bg-slate-800 dark:focus:border-indigo-400 dark:focus:ring-indigo-800"
+              className="glass w-full rounded-lg px-4 py-2.5 text-sm outline-none transition focus:border-purple-500/50"
             />
             {replyError && (
-              <p className="text-sm text-red-500">{replyError}</p>
+              <p className="text-sm text-red-400">{replyError}</p>
             )}
             <button
               type="submit"
               disabled={replying}
-              className="rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 px-5 py-2 text-sm font-medium text-white transition-all hover:scale-105 hover:shadow-xl disabled:opacity-50"
+              className="btn-primary"
             >
               {replying ? "Posting..." : "Post Reply"}
             </button>
           </form>
         </CommunityAnimation>
       ) : (
-        <CommunityAnimation delay={0.2}>
-          <div className="mt-8 rounded-lg border border-dashed border-gray-300 p-4 text-center text-sm text-gray-500 dark:border-slate-600">
-            <Link href="/community/login" className="font-medium text-indigo-600 hover:underline dark:text-indigo-400">
+        <CommunityAnimation>
+          <div className="glass-card mt-8 rounded-lg p-4 text-center text-sm text-gray-500">
+            <Link href="/community/login" className="font-medium text-purple-400 hover:text-purple-300">
               Log in
             </Link> to reply
           </div>

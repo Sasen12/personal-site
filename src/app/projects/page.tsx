@@ -26,20 +26,21 @@ export default async function Projects({
   return (
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <AnimatedSection>
-        <h1 className="mb-2 text-4xl font-bold sm:text-6xl">Projects</h1>
-        <p className="mb-8 text-lg text-gray-600 dark:text-slate-400">
+        <span className="section-label mb-4">Work</span>
+        <h1 className="gradient-text mb-4 text-4xl font-bold sm:text-6xl">Projects</h1>
+        <p className="mb-8 text-lg text-gray-400">
           Things I&apos;ve built and worked on.
         </p>
       </AnimatedSection>
 
-      <AnimatedSection delay={0.05}>
+      <AnimatedSection>
         <div className="mb-8 flex flex-wrap gap-2">
           <a
             href="/projects"
             className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
               !cat
-                ? "bg-indigo-600 text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700"
+                ? "bg-purple-600 text-white"
+                : "bg-white/5 text-gray-400 hover:bg-white/10"
             }`}
           >
             All
@@ -50,8 +51,8 @@ export default async function Projects({
               href={`/projects?cat=${encodeURIComponent(c)}`}
               className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                 cat === c
-                  ? "bg-indigo-600 text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700"
+                  ? "bg-purple-600 text-white"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10"
               }`}
             >
               {c}
@@ -62,16 +63,16 @@ export default async function Projects({
 
       {filtered.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2">
-          {filtered.map((project, i) => (
-            <AnimatedCard key={project.slug} index={i}>
+          {filtered.map((project) => (
+            <AnimatedCard key={project.slug}>
               <ProjectCard project={project} />
             </AnimatedCard>
           ))}
         </div>
       ) : (
-        <div className="rounded-xl border border-dashed border-gray-300 p-16 text-center dark:border-slate-600">
-          <p className="text-gray-500">No projects in this category.</p>
-          <a href="/projects" className="mt-2 inline-block text-sm text-indigo-600 hover:underline dark:text-indigo-400">
+        <div className="glass-card rounded-xl p-16 text-center">
+          <p className="text-gray-400">No projects in this category.</p>
+          <a href="/projects" className="mt-2 inline-block text-sm text-purple-400 hover:text-purple-300">
             Clear filter
           </a>
         </div>

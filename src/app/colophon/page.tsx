@@ -10,7 +10,6 @@ const stacks = [
   { label: "Framework", value: "Next.js 16.2.9 (App Router)" },
   { label: "Language", value: "TypeScript" },
   { label: "Styling", value: "Tailwind CSS v4" },
-  { label: "Animations", value: "framer-motion" },
   { label: "Blog Content", value: "Markdown (gray-matter + remark)" },
   { label: "Blog Admin", value: "Custom CMS with Netlify Blobs" },
   { label: "Fonts", value: "Geist (Sans & Mono) via next/font" },
@@ -23,8 +22,8 @@ export default function ColophonPage() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       <AnimatedSection>
-        <h1 className="mb-2 text-3xl font-bold sm:text-4xl">Colophon</h1>
-        <p className="mb-8 text-gray-600 dark:text-slate-400">
+        <h1 className="mb-2 text-3xl font-bold gradient-text inline-block sm:text-4xl">Colophon</h1>
+        <p className="mb-8 text-gray-400">
           The tech stack and philosophy behind this site.
         </p>
       </AnimatedSection>
@@ -34,9 +33,9 @@ export default function ColophonPage() {
           <h2 className="mb-4 text-xl font-semibold">Technology</h2>
           <div className="space-y-3">
             {stacks.map((s) => (
-              <div key={s.label} className="flex items-baseline gap-4 rounded-lg border border-gray-200 p-4 dark:border-slate-700">
-                <span className="min-w-28 text-sm font-medium text-indigo-600 dark:text-indigo-400">{s.label}</span>
-                <span className="text-gray-700 dark:text-slate-300">{s.value}</span>
+              <div key={s.label} className="glass-card rounded-xl p-4 flex items-baseline gap-4">
+                <span className="min-w-28 text-sm font-medium text-purple-400">{s.label}</span>
+                <span className="text-gray-300">{s.value}</span>
               </div>
             ))}
           </div>
@@ -46,7 +45,7 @@ export default function ColophonPage() {
       <AnimatedSection delay={0.15}>
         <section className="mb-10">
           <h2 className="mb-3 text-xl font-semibold">Philosophy</h2>
-          <div className="prose prose-gray max-w-none dark:prose-invert text-sm">
+          <div className="space-y-4 text-sm text-gray-400">
             <p>
               This site is designed to be fast, accessible, and lightweight. No bloated frameworks, no cookie banners, no tracking scripts.
             </p>
@@ -65,13 +64,13 @@ export default function ColophonPage() {
           <h2 className="mb-3 text-xl font-semibold">Performance</h2>
           <div className="grid gap-4 sm:grid-cols-3">
             {[
-              { label: "Lighthouse", value: "100/100", color: "text-green-500" },
-              { label: "Build Time", value: "~45s", color: "text-blue-500" },
-              { label: "Bundle Size", value: "~85KB", color: "text-purple-500" },
+              { label: "Lighthouse", value: "100/100" },
+              { label: "Build Time", value: "~45s" },
+              { label: "Bundle Size", value: "~85KB" },
             ].map((stat) => (
-              <div key={stat.label} className="rounded-lg border border-gray-200 p-4 text-center dark:border-slate-700">
-                <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
-                <div className="mt-1 text-xs text-gray-500 dark:text-slate-500">{stat.label}</div>
+              <div key={stat.label} className="glass-card rounded-xl p-4 text-center">
+                <div className="text-2xl font-bold gradient-text">{stat.value}</div>
+                <div className="mt-1 text-xs text-gray-500">{stat.label}</div>
               </div>
             ))}
           </div>
