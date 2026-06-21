@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 
 const cards = [
@@ -26,27 +26,16 @@ const cards = [
 
 export default function WegicMotionShowcase() {
   const sectionRef = useRef<HTMLElement>(null)
-  const shouldReduceMotion = useReducedMotion()
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   })
-  const x = useTransform(scrollYProgress, [0, 1], shouldReduceMotion ? ["0%", "0%"] : ["7%", "-12%"])
+  const x = useTransform(scrollYProgress, [0, 1], ["7%", "-12%"])
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden border-b border-white/5 py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <div className="section-label mb-4 w-fit">Workflow</div>
-            <h2 className="max-w-2xl text-3xl font-bold leading-tight sm:text-5xl">
-              Work that moves from idea to launch.
-            </h2>
-          </div>
-          <p className="max-w-sm text-sm leading-6 text-gray-400">
-            A compact view of how projects move from early direction to shipped, useful work.
-          </p>
-        </div>
+      <div className="mx-auto mb-10 max-w-5xl px-6">
+        <div className="section-label w-fit">Workflow</div>
       </div>
 
       <motion.div className="wegic-showcase-track" style={{ x }}>
@@ -54,7 +43,7 @@ export default function WegicMotionShowcase() {
           <motion.article
             key={`${card.title}-${index}`}
             className="wegic-work-card group"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 48, scale: 0.96 }}
+            initial={{ opacity: 0, y: 48, scale: 0.96 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.76, ease: [0.16, 1, 0.3, 1], delay: (index % cards.length) * 0.08 }}
