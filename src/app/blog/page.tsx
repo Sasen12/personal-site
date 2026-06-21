@@ -1,8 +1,14 @@
+import type { Metadata } from "next"
 import BlogCard from "@/components/BlogCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import AnimatedCard from "@/components/AnimatedCard"
 import { getAllPosts } from "@/lib/posts"
 import { getAdminPosts } from "@/lib/admin-storage"
+
+export const metadata: Metadata = {
+  title: "Blog — Sasen",
+  description: "Tech commentary, project deep-dives, and personal writing about AI, hardware, mobile, and development.",
+}
 
 export default async function Blog({
   searchParams,

@@ -1,7 +1,13 @@
+import type { Metadata } from "next"
 import ProjectCard from "@/components/ProjectCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import AnimatedCard from "@/components/AnimatedCard"
 import { projects } from "@/data/projects"
+
+export const metadata: Metadata = {
+  title: "Projects — Sasen",
+  description: "Open-source projects, apps, and experiments across web, mobile, AI, and games.",
+}
 
 const categories = [...new Set(projects.map((p) => p.category))].sort()
 
