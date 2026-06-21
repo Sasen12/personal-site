@@ -47,7 +47,7 @@ export default function ParallaxHero({ children }: { children: React.ReactNode }
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.3 }}
-          transition={{ duration: 1.5, ease: "ease-out" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat dark:block"
           style={{ backgroundImage: "url(/images/tech/workspace.jpg)" }}
         />
@@ -57,7 +57,7 @@ export default function ParallaxHero({ children }: { children: React.ReactNode }
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "ease-out" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
           className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full blur-3xl"
           style={{
             background: isDark
@@ -69,7 +69,7 @@ export default function ParallaxHero({ children }: { children: React.ReactNode }
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "ease-out", delay: 0.15 }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.15 }}
           className="absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full blur-3xl"
           style={{
             background: isDark
@@ -81,7 +81,7 @@ export default function ParallaxHero({ children }: { children: React.ReactNode }
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "ease-out", delay: 0.3 }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
           className="absolute top-1/2 left-1/3 h-[400px] w-[400px] rounded-full blur-3xl"
           style={{
             background: isDark
