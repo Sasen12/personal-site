@@ -11,17 +11,22 @@ type Props = {
 
 export default function AnimatedSection({ children, className, delay = 0 }: Props) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-80px" })
+  const isInView = useInView(ref, { once: true, margin: "-60px" })
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 80, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 80, scale: 0.9 }}
+      initial={{ opacity: 0, y: 120, scale: 0.5, rotate: -4, filter: "blur(8px)" }}
+      animate={
+        isInView
+          ? { opacity: 1, y: 0, scale: 1, rotate: 0, filter: "blur(0px)" }
+          : { opacity: 0, y: 120, scale: 0.5, rotate: -4, filter: "blur(8px)" }
+      }
       transition={{
         type: "spring",
-        stiffness: 150,
-        damping: 25,
+        stiffness: 120,
+        damping: 14,
+        mass: 0.9,
         delay,
       }}
       className={className}

@@ -7,6 +7,7 @@ import SkipToContent from "@/components/SkipToContent"
 import AnnouncementBanner from "@/components/AnnouncementBanner"
 import KeyboardShortcuts from "@/components/KeyboardShortcuts"
 import ImageLightbox from "@/components/ImageLightbox"
+import { CommunityProvider } from "@/components/CommunityProvider"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -76,7 +77,7 @@ export default function RootLayout({
         <SkipToContent />
         <AnnouncementBanner />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1"><CommunityProvider>{children}</CommunityProvider></main>
         <Footer />
         <ScrollToTop />
         <KeyboardShortcuts />
