@@ -1,5 +1,6 @@
 "use client"
 
+import { AnimatePresence, motion } from "framer-motion"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
@@ -19,11 +20,16 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50">
+    <motion.nav
+      className="fixed top-0 right-0 left-0 z-50"
+      initial={{ opacity: 0, y: -18, filter: "blur(10px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.68, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="mx-auto max-w-5xl px-4 pt-4">
-        <div className="glass rounded-2xl px-6 py-3">
+        <div className="glass rounded-[22px] px-6 py-3">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-lg font-bold tracking-tight">
+            <Link href="/" className="text-lg font-bold">
               <span className="gradient-text">S</span>asen
             </Link>
 
@@ -35,10 +41,10 @@ export default function Navbar() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className={`rounded-full px-4 py-2 text-sm transition-all ${
-                        isActive
-                          ? "bg-white/10 text-white"
-                          : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
+                    className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
+                      isActive
+                        ? "bg-white/10 text-white"
+                        : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
                       }`}
                     >
                       {link.label}
@@ -59,29 +65,37 @@ export default function Navbar() {
             </div>
           </div>
 
-          {open && (
-            <div className="mt-4 flex flex-col gap-2 border-t border-white/10 pt-4">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`rounded-lg px-4 py-2.5 text-sm transition-colors ${
-                      isActive
-                        ? "bg-white/10 font-medium text-white"
-                        : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              })}
-            </div>
-          )}
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                className="mt-4 flex flex-col gap-2 overflow-hidden border-t border-white/10 pt-4"
+                initial={{ height: 0, opacity: 0, y: -8 }}
+                animate={{ height: "auto", opacity: 1, y: 0 }}
+                exit={{ height: 0, opacity: 0, y: -8 }}
+                transition={{ duration: 0.34, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className={`rounded-lg px-4 py-2.5 text-sm transition-colors ${
+                        isActive
+                          ? "bg-white/10 font-medium text-white"
+                          : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                })}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   )
 }

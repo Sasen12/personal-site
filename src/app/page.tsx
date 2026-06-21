@@ -3,9 +3,23 @@ import BlogCard from "@/components/BlogCard"
 import ProjectCard from "@/components/ProjectCard"
 import AnimatedSection from "@/components/AnimatedSection"
 import AnimatedCard from "@/components/AnimatedCard"
+import HeroPromptCarousel from "@/components/HeroPromptCarousel"
+import KineticHeadline from "@/components/KineticHeadline"
 import ParallaxHero from "@/components/ParallaxHero"
+import WegicMotionShowcase from "@/components/WegicMotionShowcase"
 import { projects } from "@/data/projects"
 import { getAllPosts } from "@/lib/posts"
+
+const motionPhrases = [
+  "Full-stack web apps",
+  "Unity prototypes",
+  "Motion graphics",
+  "Technical writing",
+  "Video editing",
+  "Student tools",
+  "Mobile experiments",
+  "Creative systems",
+]
 
 export default function Home() {
   const featuredProjects = projects.filter((_, i) => i < 4)
@@ -16,32 +30,33 @@ export default function Home() {
   return (
     <div>
       <ParallaxHero>
-        <div className="relative w-full px-6">
-          <div className="mx-auto max-w-4xl text-center">
-            <AnimatedSection delay={0}>
+        <div className="hero-content-shell">
+          <div className="mx-auto max-w-5xl text-center">
+            <AnimatedSection delay={0} animateOnLoad>
               <div className="section-label mx-auto w-fit">
-                <span className="inline-flex h-1.5 w-1.5 rounded-full bg-purple-400" />
+                <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[#b6f09c]" />
                 Building things for the web
               </div>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.15}>
-              <h1 className="mt-8 mb-6 text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl leading-[1.1]">
-                Hi, I&apos;m{" "}
-                <span className="gradient-text">
-                  Sasen
-                </span>
-              </h1>
-            </AnimatedSection>
+            <KineticHeadline
+              className="mt-8 mb-6 text-5xl font-bold leading-[1.04] sm:text-7xl lg:text-8xl"
+              lines={[
+                { text: "Hi, I'm" },
+                { text: "Sasen", accent: true },
+              ]}
+            />
 
-            <AnimatedSection delay={0.3}>
+            <AnimatedSection delay={0.42} animateOnLoad>
               <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
                 Full-stack developer, Unity tinkerer, and video editor. I build web apps,
                 mobile apps, games, tools, and occasionally make music.
               </p>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.45}>
+            <HeroPromptCarousel />
+
+            <AnimatedSection delay={0.68} animateOnLoad>
               <div className="mt-10 flex flex-wrap justify-center gap-4">
                 <Link
                   href="/projects"
@@ -85,6 +100,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="overflow-hidden border-b border-white/5 py-8">
+        <div className="motion-marquee" aria-hidden="true">
+          <div className="motion-marquee-track">
+            {[...motionPhrases, ...motionPhrases].map((phrase, index) => (
+              <span key={`${phrase}-${index}`} className="motion-marquee-pill">
+                {phrase}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <WegicMotionShowcase />
 
       <div className="mx-auto max-w-5xl space-y-24 px-6 py-24 sm:space-y-32 sm:py-28">
         <AnimatedSection>
