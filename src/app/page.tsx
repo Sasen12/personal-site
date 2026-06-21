@@ -6,7 +6,7 @@ import AnimatedCard from "@/components/AnimatedCard"
 import HeroPromptCarousel from "@/components/HeroPromptCarousel"
 import KineticHeadline from "@/components/KineticHeadline"
 import ParallaxHero from "@/components/ParallaxHero"
-import WegicMotionShowcase from "@/components/WegicMotionShowcase"
+
 import { projects } from "@/data/projects"
 import { getAllPosts } from "@/lib/posts"
 
@@ -112,8 +112,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <WegicMotionShowcase />
 
       <div className="mx-auto max-w-5xl space-y-24 px-6 py-24 sm:space-y-32 sm:py-28">
         <AnimatedSection>
