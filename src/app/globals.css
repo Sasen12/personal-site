@@ -35,37 +35,7 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-@keyframes float-1 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(8px, -12px); }
-}
 
-@keyframes float-2 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-10px, 8px); }
-}
-
-@keyframes float-3 {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(6px, 10px); }
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 15s ease infinite;
-}
-
-.animate-float-1 {
-  animation: float-1 24s ease-in-out infinite;
-}
-
-.animate-float-2 {
-  animation: float-2 28s ease-in-out infinite;
-}
-
-.animate-float-3 {
-  animation: float-3 22s ease-in-out infinite;
-}
 
 article h2 {
   @apply mb-4 mt-10 text-xl font-semibold;
