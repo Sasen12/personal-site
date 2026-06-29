@@ -6,6 +6,7 @@ import AnimatedCard from "@/components/AnimatedCard"
 import HeroPromptCarousel from "@/components/HeroPromptCarousel"
 import KineticHeadline from "@/components/KineticHeadline"
 import ParallaxHero from "@/components/ParallaxHero"
+import LaptopScrollSection from "@/components/LaptopScrollSection"
 
 import { projects } from "@/data/projects"
 import { getAllPosts } from "@/lib/posts"
@@ -48,7 +49,7 @@ export default function Home() {
             />
 
             <AnimatedSection delay={0.42} animateOnLoad>
-              <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+              <p className="mx-auto max-w-2xl text-lg leading-relaxed sm:text-xl" style={{ color: "var(--text-muted)" }}>
                 Full-stack developer, Unity tinkerer, and video editor. I build web apps,
                 mobile apps, games, tools, and occasionally make music.
               </p>
@@ -77,7 +78,7 @@ export default function Home() {
         </div>
       </ParallaxHero>
 
-      <section className="border-y border-white/5">
+      <section style={{ borderTop: "1px solid var(--card-border)", borderBottom: "1px solid var(--card-border)" }}>
         <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
             {[
@@ -91,7 +92,7 @@ export default function Home() {
                   <span className="block text-3xl font-bold tracking-tight gradient-text sm:text-4xl">
                     {stat.value}
                   </span>
-                  <span className="mt-1 block text-sm text-gray-500">
+                  <span className="mt-1 block text-sm" style={{ color: "var(--text-muted)" }}>
                     {stat.label}
                   </span>
                 </div>
@@ -101,7 +102,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="overflow-hidden border-b border-white/5 py-8">
+      <section className="overflow-hidden py-8" style={{ borderBottom: "1px solid var(--card-border)" }}>
         <div className="motion-marquee" aria-hidden="true">
           <div className="motion-marquee-track">
             {[...motionPhrases, ...motionPhrases].map((phrase, index) => (
@@ -113,6 +114,8 @@ export default function Home() {
         </div>
       </section>
 
+      <LaptopScrollSection />
+
       <div className="mx-auto max-w-5xl space-y-24 px-6 py-24 sm:space-y-32 sm:py-28">
         <AnimatedSection>
           <section>
@@ -123,7 +126,8 @@ export default function Home() {
               </div>
               <Link
                 href="/projects"
-                className="hidden text-sm font-medium text-purple-400 transition-colors hover:text-purple-300 sm:inline-flex"
+                className="hidden text-sm font-medium transition-colors sm:inline-flex"
+                style={{ color: "var(--color-accent)" }}
               >
                 View all &rarr;
               </Link>
@@ -138,7 +142,8 @@ export default function Home() {
             <div className="mt-6 text-center sm:hidden">
               <Link
                 href="/projects"
-                className="text-sm font-medium text-purple-400"
+                className="text-sm font-medium"
+                style={{ color: "var(--color-accent)" }}
               >
                 View all projects &rarr;
               </Link>
@@ -156,17 +161,17 @@ export default function Home() {
                 href={`/blog/${featuredPost.slug}`}
                 className="group block glass-card rounded-xl p-6 sm:p-8"
               >
-                <p className="text-xs font-medium uppercase tracking-wider text-purple-400">
+                <p className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--color-accent)" }}>
                   {new Date(featuredPost.date).toLocaleDateString("en-US", {
                     month: "long",
                     day: "numeric",
                     year: "numeric",
                   })} &middot; {featuredPost.readingTime}
                 </p>
-                <h3 className="mt-3 text-xl font-semibold text-gray-100 group-hover:text-purple-400 sm:text-2xl">
+                <h3 className="mt-3 text-xl font-semibold sm:text-2xl" style={{ color: "var(--text)" }}>
                   {featuredPost.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-400">
+                <p className="mt-2 text-sm" style={{ color: "var(--text-muted)" }}>
                   {featuredPost.excerpt}
                 </p>
               </Link>
@@ -183,7 +188,8 @@ export default function Home() {
               </div>
               <Link
                 href="/blog"
-                className="hidden text-sm font-medium text-purple-400 transition-colors hover:text-purple-300 sm:inline-flex"
+                className="hidden text-sm font-medium transition-colors sm:inline-flex"
+                style={{ color: "var(--color-accent)" }}
               >
                 Read all &rarr;
               </Link>
@@ -197,15 +203,16 @@ export default function Home() {
                 ))}
               </div>
             ) : (
-              <div className="glass-card rounded-xl p-10 text-center text-sm text-gray-500">
+              <div className="glass-card rounded-xl p-10 text-center text-sm" style={{ color: "var(--text-muted)" }}>
                 No posts yet. Write your first one at{" "}
-                <code className="text-purple-400">/admin</code>.
+                <code className="text-sm" style={{ color: "var(--color-accent)" }}>/admin</code>.
               </div>
             )}
             <div className="mt-6 text-center sm:hidden">
               <Link
                 href="/blog"
-                className="text-sm font-medium text-purple-400"
+                className="text-sm font-medium"
+                style={{ color: "var(--color-accent)" }}
               >
                 Read all posts &rarr;
               </Link>
@@ -216,7 +223,7 @@ export default function Home() {
         <AnimatedSection delay={0.2}>
           <section className="glass-card rounded-2xl p-10 sm:p-16 text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">Let&apos;s Build Something</h2>
-            <p className="mx-auto mt-4 max-w-md text-gray-400">
+            <p className="mx-auto mt-4 max-w-md" style={{ color: "var(--text-muted)" }}>
               Have a project in mind or just want to chat? I&apos;m always open to new ideas and conversations.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
